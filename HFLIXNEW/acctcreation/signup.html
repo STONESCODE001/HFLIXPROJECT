@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+
+
+
+
+
+  <style>
+    body {
+      background-color: rgba(229, 228, 226, 0.2) !important;
+    }
+
+    .btn-basic {
+      border: 2px solid #F1F1F1 !important;
+    }
+
+    .btn-continue {
+      background-color: #E50419 !important;
+    }
+
+    .btn-outline {
+      border: 1px solid darkgray !important;
+    }
+
+    .form-floating,
+    .btn-lg {
+      border-radius: 7px !important;
+    }
+
+    #googleSigninBtn, #googleSigninBtnLoading {
+      background-color: #131314;
+    }
+
+
+
+
+    /* Modal Code */
+    .acctCreatedCard {
+      border-radius: 10px !important;
+      width: 200px !important;
+      background-color: white;
+      z-index: 2 !important;
+      position: relative;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      z-index: 1;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+
+    /* The SignUp error Code*/
+    .alert-card {
+      border: 0.5px solid;
+      border-radius: 14px !important;
+    }
+
+    .alertDropdown {
+      display: inline-block;
+    }
+
+    .alertDropdown-content {
+      display: none;
+    }
+
+    .alertDropdown:hover .alertDropdown-content {
+      display: block;
+    }
+
+    /* Loader Style Code*/
+    .loaderDiv {
+      z-index: 2 !important;
+    }
+
+    .overlayForLoader {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(15px);
+      z-index: 1 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Modal Dusplay Code -->
+  <div class="container-fluid">
+    <div class="container">
+      <div class="card-body mt-5 acctCreatedCard mx-auto hidden">
+        <h6 class="fw-bold text-center my-auto ">
+          <svg class="success-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="width: 25px; color: green">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          Account Created
+        </h6>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container-fluid mx-auto my-auto row">
+
+    <nav class="navbar d-none d-sm-inline ps-3">
+      <a class="navbar-brand " href="../index.html">
+        <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;">
+      </a>
+    </nav>
+
+
+    <div class="col-md-6 mx-auto my-auto ">
+      <p class=" display-6 p-3 mx-auto my-auto fw-bold d-none d-sm-inline">
+        Hi ! <br>
+        Create a Free Account Now for the best experience!
+      </p>
+    </div>
+
+
+
+    <div class=" col-md-6">
+      <div class=" mx-auto ">
+
+
+        <!--- Code of alert error signup-->
+        <div class="card mt-5 mb-0 alert-card alert-danger hidden">
+          <div class="card-body row gap-3 ">
+            <div class="col-1 ">
+              <svg fill='currentcolor' width="25px" height="auto" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class=" ">
+                <title>cancel</title>
+                <path d="M16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM21.961 12.209c0.244-0.244 0.244-0.641 0-0.885l-1.328-1.327c-0.244-0.244-0.641-0.244-0.885 0l-3.761 3.761-3.761-3.761c-0.244-0.244-0.641-0.244-0.885 0l-1.328 1.327c-0.244 0.244-0.244 0.641 0 0.885l3.762 3.762-3.762 3.76c-0.244 0.244-0.244 0.641 0 0.885l1.328 1.328c0.244 0.244 0.641 0.244 0.885 0l3.761-3.762 3.761 3.762c0.244 0.244 0.641 0.244 0.885 0l1.328-1.328c0.244-0.244 0.244-0.641 0-0.885l-3.762-3.76 3.762-3.762z"></path>
+              </svg>
+            </div>
+            <div class="col-10 alertDropdown">
+              <h6 class="fw-bold alertMessage">
+                Your password isn't
+              </h6>
+              <div class=" alertDropdown-content">
+                <ul class="p-0 ms-3 fw-light mt-3 ">
+                  <li class="p-0 m-0">Password & Username: At least 8 characters. </li>
+                  <li class="mt-2">
+                    Ensure email is not already in use.
+                  </li>
+                  <li class="mt-2">
+                    Username & Password: Only letters (A-Z), numbers (0-9), and special characters, no spaces.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="overlayForLoader">
+          <div class="container-fluid">
+            <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+              <div class="text-center loaderDiv">
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class=" text-center mt-5 d-md-none d-lg-block">
+          <img src="/images/hflixlogo_rd.png" style="width: 92px;">
+        </div>
+        <h6 class="fs-5 fw-bold text-center mb-4 mt-4">
+          Create your account
+        </h6>
+
+
+        <button id="googleSigninBtn" class=" w-100 mb-3 btn p-1 text-white fw-bold d-none">
+          <img src="/images/web_dark_sq_ctn.svg">
+        </button>
+        <button id="googleSigninBtnLoading" class=" w-100 mb-3 btn p-2 text-white fw-bold hidden" disabled>
+          <span class=" fw-bold spinner-border spinner-border-sm"></span>
+          <small> Signing in ... </small>
+        </button>
+
+        <h6 class="text-center m-3 small d-none"> OR </h6>
+
+        <form autocomplete="on" id="login-form">
+          <div class="form-floating mb-3">
+            <input type="name" id="userName" class="form-control rounded-4" placeholder="Username" required>
+            <label for="userName"> Username*</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="Emailaddress" id="Email" class="form-control" placeholder="Email address" required>
+            <label for="Email">Email address*</label>
+          </div>
+
+
+          <div class="form-floating mb-3">
+
+            <input type="password" id="Password" class="form-control" placeholder="Password" required>
+            <label for="Password ">Password*</label>
+            
+            <div class="form-floating mb-3 mt-3">
+              <input type="text" id="referralCode" class="form-control" placeholder="Referral code" required>
+              <label for="referralCode">Referral Code if you have one</label>
+            </div>
+            
+            <div class="text-start pe-1 mb-2 pb-0 mt-3">
+              <input class="form-check-input" type="checkbox" onclick="showPassword()">
+              <label class="form-check-label small text-end">
+                Show Password
+              </label>
+            </div>
+
+          </div>
+
+
+          <button type="submit" id="signupButton" class="w-100 mb-2 btn btn-lg rounded-0 btn-continue text-white fw-bold">
+            <small> Sign Up </small>
+          </button>
+          <button class="w-100 mb-2 btn btn-lg btn-danger fw-bold btn-continue hidden" type="button" id="signupButtonLoading" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+            <small> Signing Up ... </small>
+          </button>
+
+          <div class="text-center">
+
+            <small class="text-center "> Already have an account <a href="/acctcreation/login.html"> Sign in </a>
+            </small>
+          </div>
+
+          <hr class="my-4">
+
+          <h6 class="text-center mt-0 fw-normal small"> By signing in, you are agreeing to our <strong> Privacy Policy </strong> and <strong>terms of use. </strong>
+          </h6>
+
+
+        </form>
+      </div>
+    </div>
+
+
+    <div class="overlay hidden "></div>
+  </div>
+
+  <script type="module" src="/email-password-auth.js"></script>
+  <script type="module" src="/google-auth.js"></script>
+  <script src="/acctcreation/acctCreation.js"></script>
+  <script type="module" src="/acctcreation/acctCreationLoader.js"></script>
+
+</body>

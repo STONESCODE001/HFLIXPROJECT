@@ -1,0 +1,44 @@
+rules_version = '2';
+
+service cloud.firestore {
+
+  match /databases/{database}/documents {
+
+    // Allow read and write access to the entire database for authenticated users
+
+    match /{document=**} {
+
+      allow update, delete , write: if request.auth.uid != null;
+
+    }
+
+    
+
+    // Allow users to create their own documents in the "users" collection
+
+    // Also allow creation for users who are not authenticated (during signup)
+
+    match /users/{document=**} {
+      allow update, delete, read: if request.auth.uid != null;
+
+      allow create: if request.auth.uid == null;
+
+    }
+    match /netflixGroup/{document=**} {
+
+      allow read: if request.auth.uid != null;
+      allow update: if request.auth.uid != null;
+
+    }
+    match /showmaxGroup/{document=**} {
+      allow read: if request.auth.uid != null;
+      allow update: if request.auth.uid != null;
+    }
+    match /spotifyGroup/{document=**} {
+      allow update: if request.auth.uid != null;
+      allow read: if request.auth.uid != null ;
+    }
+
+  }
+
+}

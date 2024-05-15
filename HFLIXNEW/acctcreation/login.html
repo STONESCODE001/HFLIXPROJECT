@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+
+
+  <style>
+    body {
+      background-color: rgba(229, 228, 226, 0.2) !important;
+    }
+
+    h3 {
+      width: !important;
+    }
+
+    .btn-basic {
+      border: 2px solid #F1F1F1 !important;
+    }
+
+    .btn-continue {
+      background-color: #E50419 !important;
+    }
+
+    .btn-outline {
+      border: 1px solid gray !important;
+    }
+
+    .form-floating,
+    .btn-lg {
+      border-radius: 7px !important;
+    }
+
+    p>strong {
+      color: #E50419;
+    }
+
+    .monospace {
+      text-decoration: none !important;
+      color: #E50419 !important;
+    }
+
+    #googleSigninBtn, #googleSigninBtnLoading {
+      background-color: #131314!important;
+    }
+    
+
+
+
+    /* The SignUp error Code*/
+    .alert-card {
+      border: 0.5px solid;
+      border-radius: 14px !important;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .alertDropdown {
+      display: inline-block;
+    }
+
+    .alertDropdown-content {
+      display: none;
+    }
+
+    .alertDropdown:hover .alertDropdown-content {
+      display: block;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="container-fluid mx-auto my-auto row">
+
+    <nav class="navbar d-none d-sm-inline ps-3">
+      <a class="navbar-brand " href="../index.html">
+        <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;">
+      </a>
+    </nav>
+
+    <div class="col-md-6 mx-auto my-auto ">
+      <p class=" display-6 p-3 mx-auto my-auto fw-bold d-none d-sm-inline">
+        Hi ! <br>
+        Sign in now for the best experience!
+      </p>
+    </div>
+
+
+
+    <!--- Loader code -->
+    <div class="overlayForLoader  ">
+      <div class="container-fluid">
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="text-center loaderDiv">
+            <div class="spinner-grow spinner-grow-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow spinner-grow-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow spinner-grow-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class=" col-md-6">
+      <div class=" mx-auto ">
+
+        <!-- Code for the Alert Error Code-->
+        <div class="card mt-5 mb-0 alert-card alert-danger hidden">
+          <div class="card-body row gap-3 ">
+            <div class="col-1 ">
+              <svg fill='currentcolor' width="25px" height="auto" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class=" ">
+                <title>cancel</title>
+                <path d="M16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM21.961 12.209c0.244-0.244 0.244-0.641 0-0.885l-1.328-1.327c-0.244-0.244-0.641-0.244-0.885 0l-3.761 3.761-3.761-3.761c-0.244-0.244-0.641-0.244-0.885 0l-1.328 1.327c-0.244 0.244-0.244 0.641 0 0.885l3.762 3.762-3.762 3.76c-0.244 0.244-0.244 0.641 0 0.885l1.328 1.328c0.244 0.244 0.641 0.244 0.885 0l3.761-3.762 3.761 3.762c0.244 0.244 0.641 0.244 0.885 0l1.328-1.328c0.244-0.244 0.244-0.641 0-0.885l-3.762-3.76 3.762-3.762z"></path>
+              </svg>
+            </div>
+            <div class="col-10 alertDropdown">
+              <h6 class="fw-bold alertMessage">
+                Your password isn't
+              </h6>
+              <div class=" alertDropdown-content">
+                <ul class="p-0 ms-3 fw-light mt-3 ">
+                  <li class="p-0 m-0">Password & Username: At least 8 characters. </li>
+                  <li class="mt-2">
+                    Ensure email is not already in use.
+                  </li>
+                  <li class="mt-2">
+                    Username & Password: Only letters (A-Z), numbers (0-9), and special characters, no spaces.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class=" text-center mt-5 d-md-none d-lg-block">
+          <img src="/images/hflixlogo_rd.png" style="width: 92px;">
+        </div>
+        <h6 class="fs-5 fw-bold text-center mb-4 mt-3">
+          Sign in into your HFIX Account
+        </h6>
+        <!--   <p class=" text-center"> Log in now for the best experience! </p> -->
+
+        <button id="googleSigninBtn" class=" w-100 mb-3 btn p-1 text-white fw-bold d-none">
+          <img src="/images/web_dark_sq_ctn.svg">
+        </button>
+        
+        <button id="googleSigninBtnLoading" class=" w-100 mb-3 btn p-2 text-white fw-bold hidden" disabled>
+           <span class="fw-bold spinner-border spinner-border-sm"></span>
+          <small> Signing in ... </small>
+        </button>
+        
+        <h6 class="text-center m-3 small d-none"> OR </h6>
+
+        <form autocomplete="on" id="login-form">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-4" id="Email" placeholder="name@example.com" autocomplete="on" required>
+            <label for="Email">Email address</label>
+          </div>
+
+
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-4" id="Password" placeholder="Password" required>
+            <label for="Password">Password</label>
+
+            <div class=" text-start pe-1 mb-0 pb-0 mt-3">
+              <input class="form-check-input" type="checkbox" id="checkbox" onclick="showPassword()">
+              <label for="checkbox" class="form-check-label small text-end">
+                Show Password
+              </label>
+            </div>
+
+          </div>
+
+
+          <div class="text-end mb-3 mt-0 pt-0">
+            <a href="#" class=" text-end text-decoration-none monospace fw-normal small"> Reset Password</a>
+          </div>
+
+
+
+          <button id="signinButton" class="w-100 mb-4 btn btn-lg btn-continue text-white fw-bold" type="submit">
+            <small> Sign in</small>
+          </button>
+          <button class="w-100 mb-4 btn btn-lg btn-danger fw-bold btn-continue hidden" type="button" id="signinButtonLoading" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+            <small> Signing in ... </small>
+          </button>
+
+          <p class="text-center mt-0 fw-normal small"> By signing in, you are agreeing to our <strong> Privacy Policy </strong> and <strong>terms of use. </strong></p>
+
+
+          <hr class="mt-2">
+
+          <p class="text-center fw-normal "> New to HFLIX ? <a href="/acctcreation/signup.html " class="monospace"><strong class="fw-normal"> Create account. </strong> </a></p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="/email-password-auth.js"></script>
+  <script type="module" src="/google-auth.js"></script>
+  <script src="/acctcreation/acctCreation.js"></script>
+  <script type="module" src="/acctcreation/acctCreationLoader.js"></script>
+</body>
+
+
+
+</html>

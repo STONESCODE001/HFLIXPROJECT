@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+  <style>
+    /* Nav*/
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Inter', sans-serif;
+    }
+
+    p,
+    h5,
+    h6 {
+      font-family: 'Roboto', sans-serif !important;
+    }
+
+    /* Nav*/
+    .nav-text {
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .loginnav {
+      border-radius: 4px !important;
+      background-color: #F5F5F5 !important;
+    }
+
+    /* Dropdown of the nav bar profile picture*/
+    .dropdownnav {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-contentnav {
+      background-color: #3F2424;
+      right: 0;
+      border-radius: 5px !important;
+      display: none;
+      min-width: 220px !important;
+      position: absolute;
+      box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+      /*padding: 12px 16px;*/
+      z-index: 1;
+    }
+
+    .dropdownnav:hover .dropdown-contentnav {
+      display: block;
+      transition: 1ms ease-in-out;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #E50419 !important;
+    }
+
+    .info-text {
+      background-color: #E5F1FF;
+      border-radius: 10px;
+    }
+
+    .info-text2 {
+      border-radius: 9px;
+    }
+
+    .sub-card1 {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+
+    .days-txt1 {
+      color: #E50419 !important;
+      background-color: #FFF1F2;
+      border-radius: 3px;
+    }
+
+    /*.card{
+  border-radius: 15px;
+}*/
+    .sub-card2 {
+      border-radius: 0px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    .text-end>strong {
+      background-color: #E50419;
+      border-radius: 4px;
+    }
+
+    .sub-card3 {}
+
+    .days {
+      color: #E50419;
+    }
+
+    .subs-card-bg {
+      background-color: #3F2424;
+    }
+
+    .last-card {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    .netflixSubPage {
+      display: block;
+    }
+
+    .explore-btn {
+      background-color: #E50419 !important;
+
+      border-radius: 15px;
+    }
+
+    .explore-btn>a {
+      color: #FFF1F2 !important;
+      text-decoration: none;
+    }
+
+    /* footer*/
+    .text-start>a {
+      font-weight: bold !important;
+      color: #E50419 !important;
+      text-shadow: 0 0 90px white;
+    }
+
+    .wrapper .icon {
+      position: relative;
+      background-color: #ffffff;
+      border-radius: 50%;
+      margin: 5px;
+      width: 35px;
+      height: 35px;
+      font-size: 25px;
+      display: inline-block;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer {
+      border: 1px solid rgba(229, 228, 226, 0.1);
+    }
+
+
+    /* Loader Style Code*/
+    .loaderDiv {
+      z-index: 2 !important;
+    }
+
+    .overlayForLoader {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(15px);
+      z-index: 1 !important;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Loader element -->
+  <!-- <div class="loader fw-bold text-black" id="loader">Loading...</div> -->
+
+  <div id="myDiv">
+
+
+    <nav class="navbar pe-3 ps-3 ">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">
+          <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;" </a>
+
+          <div>
+            <a class="nav-text" href="/index.html">
+              <p class="d-none d-sm-inline pe-3">
+                Home
+              </p>
+            </a>
+            <a class="nav-text" href="/dashboard/login-dashboard.html">
+              <p class=" d-none d-sm-inline pe-3">
+                Subscription
+              </p>
+            </a>
+            <a class="nav-text">
+              <p class="d-none d-sm-inline pe-3">
+                Affiliate
+              </p>
+            </a>
+            <a class="nav-text" href="/LegalFolder/privacypolicy.html">
+              <p class="d-none d-sm-inline pe-3">
+                Policies
+              </p>
+            </a>
+          </div>
+
+
+
+
+
+
+
+          <div class="dropdownnav">
+            <!-- formal width below was 39px -->
+            <img id="userProfile" src="/images/person-circle.svg" style="width:42px;">
+
+
+            <div class="dropdown-contentnav ">
+              <div class="dropdown-contentnav mx-auto d-flex flex-column flex-shrink-0 p-3 fw-bold">
+
+
+                <!-- removed style="display: none;" below-->
+                <p id="userNameNav" class="mb-0 mb-md-0 me-md-auto text-white"> Welcome! <br> signedinuser@gmail.com
+                </p>
+
+                <!-- removed style="display: block;" below-->
+                <a href="/acctcreation/login.html" id="signInBtn" class="text-center mb-0 mb-md-0  p-2 loginnav text-decoration-none text-dark">
+                  Sign in
+                </a>
+
+                <hr class="text-white card-divider ">
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="nav-item d-md-none">
+                    <a href="/index.html" class="nav-link text-white" aria-current="page">
+                      <img src="/images/home (2).png" class="bi me-2" width="18" height="18" oncontextmenu="return false;">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item " id="navSubBtn">
+                    <a href="/dashboard/login-dashboard.html" class=" nav-link text-white" aria-current="page">
+                      <img src="/images/shopping-cart (1)wh.png" class="bi me-2" width="18" height="18">
+                      <use xlink:href="#home" />
+                      Subscription
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link text-white">
+                      <img src="/images/handshake (1)wh.png" class="bi me-2" width="16" height="16">
+                      <use xlink:href="#speedometer2" /></img>
+                      Affilate
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link text-white">
+                      <img src="/images/user-headset (1)wh.png" class="bi me-2" width="16" height="16">
+                      <use xlink:href="#grid" /></img>
+                      Support
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/LegalFolder/privacypolicy.html" class="nav-link text-white">
+                      <img src="/images/policies-wh-nav.png" class="bi me-2" width="16" height="16">
+                      <use xlink:href="#people-circle" /></img>
+                      Policies
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/About Html File/Aboutus.html" class=" nav-link text-white">
+                      <img src="/images/aboutus-wh-nav.png" class="bi me-2" width="16" height="16">
+                      <use xlink:href="#table" /></img>
+                      About Us
+                    </a>
+                  </li>
+                </ul>
+
+                <hr class=" text-white">
+
+                <!-- removed style="display: none;" below-->
+                <p id="signOutBtn" class="align-items-center mb-0 mb-md-0 me-md-auto text-white ">
+
+                  <img src="/images/sign-out-wh-nav (1).png" class="bi me-2" width="16" height="16">
+                  <use xlink:href="#people-circle" /></img>
+
+
+                  Sign Out
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid mt-5">
+      <div class="container">
+        <p class="info-text p-3"> <span> <img src="../images/notificationicon-bk-subdash.png" class="bi me-2" width="25" height="25">
+            <use xlink:href="#table" /></img>
+          </span> Dear customer, please know that no Hflix staff would contact you privately to ask for your bank,card or any personal information. Please be vigilant and try not to be fooled. </p>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+      <div class="container">
+        <p class="info-text2 alert-danger p-3 ">
+          <span> <img src="/images/1848398241637384582-64.png" class="bi me-2" width="25" height="25">
+            <use xlink:href="#table" /></img>
+          </span>
+
+          Try refreshing your browser / this webpage to display your login information.
+        </p>
+      </div>
+    </div>
+
+
+    <!--- Loader code -->
+    <div class="overlayForLoader">
+      <div class="container-fluid">
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="text-center loaderDiv">
+            <div class="spinner-grow spinner-grow-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow spinner-grow-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow spinner-grow-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="container-fluid mt-5 mb-5 netflixSubPage" id="netflixDiv">
+      <div class="container">
+        <div class="card sub-card1 subs-card-bg">
+          <div class="text-center">
+            <img src="/images/netflix.com.png" style="width: 130px">
+          </div>
+          <div class="row p-3 mb-0 mt-0 ">
+            <h6 class="text-start fw-bold pt-2 col-5 text-white">
+              Days left
+            </h6>
+            <h6 class=" fw-bold text-end days-txt1 p-2 col-7" id="netflixdaysLeft">
+              15days 17hrs 21min 10secs
+            </h6>
+          </div>
+        </div>
+
+        <div class="card sub-card2">
+          <div id="netflixaccountDom">
+
+            <div class="row p-3 pb-0">
+              <p class="text-start small col-4">
+                Start date
+              </p>
+              <p class="text-end fw-bold col-8" id="netflixStartDate">
+                2023-08-03
+              </p>
+            </div>
+            <hr class="d-none card-divider mt-0">
+            <div class="row p-3 pb-1 ">
+              <p class=" text-start small col-4">
+                End date
+              </p>
+              <p class="text-end fw-bold col-8" id="netflixEndDate">
+                06-09-2023
+              </p>
+            </div>
+            <hr class="card-divider mt-0">
+            <div class="p-3 pt-0 m-0 pb-0">
+              <p class=" text-start small fw-bold">
+                Account details <br>
+              </p>
+            </div>
+            <div class="row p-3 pb-0 pt-1">
+              <p class="text-start small col-5">
+                Username / email
+              </p>
+              <p class="text-end col-7" id="netflixLoginEmail">
+                abcdtfhguh@gmail.com
+              </p>
+            </div>
+            <div class="row p-3 mb-0 pb-1 mt-0 pt-2">
+              <p class=" text-start small col-6 ">
+                Password <br>
+              </p>
+              <p class="text-end col-6" id="netflixLoginPassword">
+                hjabagzghhhh
+              </p>
+            </div>
+            <hr class="card-divider mt-0">
+            <div class="p-3 mt-0 pt-1 row" id="netflixProfileNoDiv">
+              <p class="text-start small col-4"> Profile</p>
+              <p class="text-start fw-bold small "> Please use profile Number <strong class="fw-bold badge text-white bg-danger p-2 m-0 " id="netflixUserPosition"> 2 </strong> on Netflix</p>
+
+              <!--     <p class=" text-start m-0 "> 
+            <a class=" small"> 
+            My account is been misused by someone!
+            </a>
+          </p> -->
+            </div>
+
+            <div class="card d-none sub-card2 m-0 pt-4 pb-3 p-2">
+              <div class="row ms-1 me-2">
+
+                <button type="button" class="btn position-relative col-2 me-2 ">
+                  <img src="/images/man (3) dash hair.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    1
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    2
+                  </span>
+                </button><button type="button" class="btn col-2 me-2 position-relative">
+                  <img src="/images/man (3) dash hair.png" style="width:55px; height:55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    3
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    4
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    5
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- endibg div of id netflixaccountDom-->
+          </div>
+
+
+          <div class=" last-card subs-card-bg">
+            <div class=" row p-3">
+              <div class=" col-7 text-white">
+                <p class="fw-bold text-start">
+                  Renew Subscription
+                </p>
+              </div>
+              <div class="col-5">
+                <a class="text-white fw-bold" href="https://wa.me/message/NRJID6MNDVPFM1">
+                  <p class="fw-bold text-white text-end"> <span> <img src=" /images/user-headset (1)wh.png" width="20" height="20" </span> Support</p>
+                </a>
+              </div>
+              <div class="Help"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container-fluid mt-5 mb-5" id="showmaxDiv">
+      <div class="container">
+        <div class="card sub-card1 subs-card-bg">
+          <div class="text-center p-4 m-2">
+            <img src="/images/20240317_083135.png" style="width: 150px; ">
+          </div>
+          <div class="row p-3 mb-0 mt-0 ">
+            <h6 class="text-start fw-bold pt-2 col-5 text-white">
+              Days left
+            </h6>
+            <h6 class=" fw-bold text-end days-txt1 p-2 col-7" id="showmaxdaysLeft">
+              15days 17hrs 21min 10secs
+            </h6>
+          </div>
+        </div>
+
+        <div class="card sub-card2">
+          <div id="showmaxaccountDom">
+            <div class="row p-3 pb-0">
+              <p class="text-start small col-4">
+                Start date
+              </p>
+              <p class="text-end fw-bold col-8" id="showmaxStartDate">
+                2023-08-03
+              </p>
+            </div>
+            <hr class="d-none card-divider mt-0">
+            <div class="row p-3 pb-1 ">
+              <p class=" text-start small col-4">
+                End date
+              </p>
+              <p class="text-end fw-bold col-8" id="showmaxEndDate">
+                06-09-2023
+              </p>
+            </div>
+            <hr class="card-divider mt-0">
+            <div class="p-3 pt-0 m-0 pb-0">
+              <p class=" d-none text-start small fw-bold" id="accountdetails">
+                Account details <br>
+              </p>
+            </div>
+            <div class="row p-3 pb-0 pt-1">
+              <p class="text-start small col-5" id="accountdetails">
+                Username / email
+              </p>
+              <p class="text-end col-7" id="showmaxLoginEmail">
+                abcdtfhguh@gmail.com
+              </p>
+            </div>
+            <div class="row p-3 mb-0 pb-1 mt-0 pt-2">
+              <p class=" text-start small col-6 ">
+                Password <br>
+              </p>
+              <p class="text-end col-6" id="showmaxLoginPassword">
+                hjabagzghhhh
+              </p>
+            </div>
+            <hr class="card-divider mt-0">
+            <div class="p-3 mt-0 pt-1 row" id="showmaxProfileNoDiv">
+              <p class="text-start small col-4"> Profile</p>
+              <p class="text-start fw-bold small "> Please use profile Number <strong class="fw-bold badge text-white bg-danger p-2 m-0 " id="showmaxUserPosition"> 2 </strong> on Showmax</p>
+
+              <!--     <p class=" text-start m-0 "> 
+            <a class=" small"> 
+            My account is been misused by someone!
+            </a>
+          </p> -->
+            </div>
+
+            <div class="card d-none sub-card2 m-0 pt-4 pb-3 p-2">
+              <div class="row ms-1 me-2">
+
+                <button type="button" class="btn position-relative col-2 me-2 ">
+                  <img src="/images/man (3) dash hair.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    1
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    2
+                  </span>
+                </button><button type="button" class="btn col-2 me-2 position-relative">
+                  <img src="/images/man (3) dash hair.png" style="width:55px; height:55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    3
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    4
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    5
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- closing tag for showmaxaccountDom -->
+          </div>
+
+          <div class=" last-card subs-card-bg">
+            <div class=" row p-3">
+              <div class=" col-7 text-white">
+                <p class="fw-bold text-start">
+                  Renew Subscription
+                </p>
+              </div>
+              <div class="col-5">
+                <p class="fw-bold text-white text-end"> <span> <img src=" /images/user-headset (1)wh.png" width="17" height="17" </span>
+                    <a href="https://wa.me/message/NRJID6MNDVPFM1" class="text-white "> Support </a>
+                </p>
+              </div>
+              <div class="Help"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid mt-5 mb-5" id="spotifyDiv">
+      <div class="container">
+        <div class="card sub-card1 subs-card-bg">
+          <div class="text-center p-4 m-2">
+            <img src="/images/Spotify_Logo_CMYK_Green.png" style="width: 150px; ">
+          </div>
+          <div class="row p-3 mb-0 mt-0 ">
+            <h6 class="text-start fw-bold pt-2 col-5 text-white">
+              Days left
+            </h6>
+            <h6 class=" fw-bold text-end days-txt1 p-2 col-7" id="spotifydaysLeft">
+              15days 17hrs 21min 10secs
+            </h6>
+          </div>
+        </div>
+
+        <div class="card sub-card2">
+          <div id="spotifyaccountDom">
+            <div class="row p-3 pb-0">
+              <p class="text-start small col-4">
+                Start date
+              </p>
+              <p class="text-end fw-bold col-8" id="spotifyStartDate">
+                2023-08-03
+              </p>
+            </div>
+            <hr class="d-none card-divider mt-0">
+            <div class="row p-3 pb-1 ">
+              <p class=" text-start small col-4">
+                End date
+              </p>
+              <p class="text-end fw-bold col-8" id="spotifyEndDate">
+                06-09-2023
+              </p>
+            </div>
+            <hr class="card-divider mt-0">
+            <div class="p-3 pt-0 m-0 pb-0">
+              <p class=" d-none text-start small fw-bold" id="accountdetails">
+                Account details <br>
+              </p>
+            </div>
+            <div class="row p-3 pb-0 pt-1">
+              <p class="text-start small col-5" id="accountdetails">
+                Username / email
+              </p>
+              <p class="text-end col-7" id="spotifyLoginEmail">
+                abcdtfhguh@gmail.com
+              </p>
+            </div>
+            <div class="row p-3 mb-0 pb-1 mt-0 pt-2">
+              <p class=" text-start small col-6 ">
+                Password <br>
+              </p>
+              <p class="text-end col-6" id="spotifyLoginPassword">
+                hjabagzghhhh
+              </p>
+            </div>
+            <hr class="card-divider mt-0">
+            <div class="p-3 mt-0 pt-1 row" id="spotifyProfileNoDiv">
+              <p class="text-start small col-4"> Profile</p>
+              <p class="text-start fw-bold small "> Please use profile Number <strong class="fw-bold badge text-white bg-danger p-2 m-0 " id="spotifyUserPosition"> 2 </strong> on Spotify </p>
+
+              <!--     <p class=" text-start m-0 "> 
+            <a class=" small"> 
+            My account is been misused by someone!
+            </a>
+          </p> -->
+            </div>
+
+            <div class="card d-none sub-card2 m-0 pt-4 pb-3 p-2">
+              <div class="row ms-1 me-2">
+
+                <button type="button" class="btn position-relative col-2 me-2 ">
+                  <img src="/images/man (3) dash hair.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    1
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    2
+                  </span>
+                </button><button type="button" class="btn col-2 me-2 position-relative">
+                  <img src="/images/man (3) dash hair.png" style="width:55px; height:55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    3
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    4
+                  </span>
+                </button>
+                <button type="button" class="btn position-relative col-2 me-2">
+                  <img src="/images/user (1) dash- hair small.png" style="width:55px; height: 55px;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    5
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- closing tag for showmaxaccountDom -->
+          </div>
+
+          <div class=" last-card
+          subs-card-bg">
+            <div class=" row p-3">
+              <div class=" col-7 text-white">
+                <p class="fw-bold text-start">
+                  Renew Subscription
+                </p>
+              </div>
+              <div class="col-5">
+                
+                <p class="fw-bold text-white text-end"> <span> <img src=" /images/user-headset (1)wh.png" width="17" height="17" </span>
+                    <a href=" https://wa.me/message/NRJID6MNDVPFM1" class="text-white "> Support </a>
+                </p>
+              </div>
+              <div class="Help"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="container-fluid mt-6 mb-6" id="noCurrentSub">
+      <div class="container p-2 ">
+        <div class=" ">
+          <div class="text-center">
+            <img src="/images/20240216_205747.png" style="width: 80px">
+          </div>
+          <div class=" p-2 mb-0 mt-4">
+            <h6 class=" fw-bold text-center days-txt1 p-2">
+              No Subscription Information Available
+            </h6>
+            <p class="mt-2 text-center fw-semibold">
+              It seems you haven't bought any subscription plan yet
+            </p>
+            <div class="text-center mt-4">
+              <button type="button" class="p-2 btn explore-btn fw-bold text-center">
+                <a href="/index.html">
+                  Explore Plans
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid mt-4 mb-6" id="exploreMoreSub">
+      <div class="container p-2 ">
+        <div class=" ">
+          <div class=" p-2 mb-0 mt-4">
+            <h6 class=" fw-bold text-center days-txt1 p-2">
+              Explore More Plans
+            </h6>
+            <p class="mt-2 d-none text-center fw-semibold">
+              It seems you haven't bought any subscription plan yet
+            </p>
+            <div class="text-center mt-4">
+              <button type="button" class="p-2 btn explore-btn fw-bold text-center">
+                <a href="/index.html">
+                  Explore Plans
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="pt-5">
+      <div class="container-fluid footer bg-dark ">
+        <div class="container text-white pt-3 ps-4 pe-5">
+          <p class="text-start"> <a href="/index.html"> Home </a> </p>
+          <p class=" text-start"> <a href=" /LegalFolder/privacypolicy.html"> Policy</a></p>
+          <p class=" text-start"> <a href="/About Html File/Aboutus.html "> About Us </a></p>
+          <div class="wrapper">
+            <a href="#" class="icon instagram text-center">
+              <span><i class="fab fa-instagram fw-bold"></i></span>
+            </a>
+            <a href="https://wa.me/message/NRJID6MNDVPFM1" class="icon whatsapp text-center">
+              <span><i class="fab fa-whatsapp fw-bold"></i></span>
+            </a>
+          </div>
+          <p class="text-start small pb-0 pt-2"> HFLIX © 2023 by STONECODE</p>
+          <p class="text-start small pt-0"> All services are copyrights of their respective owners.</p>
+
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- the myDiv div for loading function -->
+  </div>
+
+
+
+
+
+
+  <!--  <script src = "/loader.js"></script>-->
+  <script type="module" src="/dashboard/users-dashboard.js"></script>
+  <script type="module" src="/dashboard/users-grouping.js"></script>
+
+  <!--  <script src="/main.js" type="module"></script> -->
+  <!--  <script type="module" src="/payment-code.js"></script> -->
+  <script type="module" src="/auth.js"></script>
+  <script type="module" src="/email-password-auth.js"></script>
+  <!--  <script type="module" src="/dashboard/dashboardLoader.js"></script> -->
+
+
+</body>
+
+</html>

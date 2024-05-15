@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper </title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+
+
+
+</head>
+
+<body class="body bodyForModal">
+
+
+  <!-- add this class back to the above div stone bodyForModal -->
+  <!-- Button trigger modal -->
+
+  <nav class="navbar pe-2 ps-2 ">
+    <div class="container">
+      <!-- formal logo width was 100px -->
+      <a class="navbar-brand" href="index.html">
+        <img src="/images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;">
+      </a>
+
+
+      <div>
+        <a class="nav-text" href="/index.html">
+          <p class="d-none d-sm-inline pe-3">
+            Home
+          </p>
+        </a>
+        <a class="nav-text" href="/dashboard/login-dashboard.html">
+          <p class=" d-none d-sm-inline pe-3">
+            Subscription
+          </p>
+        </a>
+        <a class="nav-text" href="/Affilate/affiliate.html">
+          <p class="d-none d-sm-inline pe-3">
+            Affiliate
+          </p>
+        </a>
+        <a class="nav-text" href="/LegalFolder/privacypolicy.html">
+          <p class="d-none d-sm-inline pe-3">
+            Policies
+          </p>
+        </a>
+      </div>
+
+
+
+
+
+      <div class="dropdownnav">
+        <!-- formal width below was 39px -->
+        <img id="userProfile" src="/images/person-circle.svg" style="width:42px;">
+
+
+        <div class="dropdown-contentnav ">
+          <div class="dropdown-contentnav mx-auto d-flex flex-column flex-shrink-0 p-3  fw-bold">
+
+
+            <!-- removed style="display: none;" below-->
+            <p id="userNameNav" class="mb-0 mb-md-0 me-md-auto text-white"> Welcome! <br> signedinuser@gmail.com
+            </p>
+
+            <!-- removed style="display: block;" below-->
+            <a href="/acctcreation/login.html" id="signInBtn" class="text-center mb-0 mb-md-0  p-2 loginnav text-decoration-none text-dark ">
+              Sign in
+            </a>
+
+            <hr class="text-white card-divider ">
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item d-none d-md-none ">
+                <a href="/index.html" class="nav-link text-white" aria-current="page">
+                  <img src="/images/home (2).png" class="bi me-2" width="18" height="18" oncontextmenu="return false;">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item " id="navSubBtn">
+                <a href="/dashboard/login-dashboard.html" class=" nav-link text-white" aria-current="page">
+                  <img src="/images/shopping-cart (1)wh.png" class="bi me-2" width="18" height="18">
+                  <use xlink:href="#home" />
+                  Subscription
+                </a>
+              </li>
+              <li>
+                <a href="/Affilate/affiliate.html" class="nav-link text-white">
+                  <img src="/images/handshake (1)wh.png" class="bi me-2" width="16" height="16">
+                  <use xlink:href="#speedometer2" /></img>
+                  Affilate
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <img src="/images/user-headset (1)wh.png" class="bi me-2" width="16" height="16">
+                  <use xlink:href="#grid" /></img>
+                  Support
+                </a>
+              </li>
+              <li>
+                <a href="/LegalFolder/privacypolicy.html" class="nav-link text-white">
+                  <img src="/images/policies-wh-nav.png" class="bi me-2" width="16" height="16">
+                  <use xlink:href="#people-circle" /></img>
+                  Policies
+                </a>
+              </li>
+              <li>
+                <a href="/About Html File/Aboutus.html" class=" nav-link text-white">
+                  <img src="/images/aboutus-wh-nav.png" class="bi me-2" width="16" height="16">
+                  <use xlink:href="#table" /></img>
+                  About Us
+                </a>
+              </li>
+            </ul>
+
+            <hr class=" text-white">
+
+            <!-- removed style="display: none;" below-->
+            <p id="signOutBtn" class="align-items-center mb-0 mb-md-0 me-md-auto text-white ">
+
+              <img src="/images/sign-out-wh-nav (1).png" class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" /></img>
+
+
+              Sign Out
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="overlayForLoader">
+    <div class="container-fluid">
+      <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="text-center loaderDiv">
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <div class="container">
+      <div class="card border-success paymtModal hidden">
+        <div class="modal-header paymtModHeader alert-success p-4 border-0">
+          <svg class="success-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="width: 20px; color: green;">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <h6 class="fw-bold text-black mt-2">
+            Payment Successfull
+          </h6>
+        </div>
+        <div class="modal-body p-4 pb-2">
+          <p>Your order has been successfully processed and should be confirmed already! 🎉. Head over to your sub page now to access your login info by clicking the button below.</p>
+        </div>
+        <div class="modal-footer p-4 pe-2 pt-2 border-0">
+          <div class="success-button-container">
+            <button type="button" class="btn" onclick="closePayMtModal()">Close</button>
+            <button type="button" class="btn fw-bold text success-sub-btn">
+              <a href="/dashboard/login-dashboard.html"> Subscription Page</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="container text-center mt-5 mb-4">
+      <h1 class="  p-3 pb-0 ">
+        Stream Smarter <br> by Streaming <strong> Cheaper </strong>
+      </h1>
+      <h6> Enjoy shared premium subscriptions from top Streaming platforms</h6>
+    </div>
+
+    <div class="mx-auto col-sm-12 col-md-9 pt-4">
+      <div class=" pt-3 ">
+        <div class="mx-auto text-center ">
+          <div class="card card1 position-relative">
+            <div class="position-absolute top-0 end-0 bg-success text-white fw-bold p-2 custom-badge"> Save &#8358 2500</div>
+            <img src="/images/netflixPremiumLogo.png" alt="netflix_logo" class="p-4 mt-4 card-img-top mx-auto" style="width: 250px">
+            <h4 class="h3 ">&#8358 2500 <small> /month</small></h4>
+          </div>
+        </div>
+
+        <div class="card card1 mx-auto p-4 mt-3">
+          <p>Stable and renewable subscription</p>
+          <p>4K (Ultra HD) + HDR Resolution, independent viewing</p>
+          <p>Real-time delivery</p>
+          <p>Support streaming on all devices </p>
+          <p>After-sales support, worry-free refund</p>
+          <div class="d-grid">
+            <button type="button" id="purchaseBtn1" class="btn fw-bold p-2 m-2"> Purchase Now
+            </button>
+            <button type="button" id="purchaseBtn1Loading" class="btn fw-bold p-2 m-2 hidden" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Order processing ...
+            </button>
+            <button type="button" id="purchaseBtn1SubActive" class="btn netflix-btn fw-bold p-2 g_btn m-2 hidden" disabled> Subscription Active!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="mx-auto col-sm-12 col-md-9">
+      <div class="mx-auto text-center mt-5">
+        <div class="card p-2 card1 position-relative">
+          <div class="position-absolute top-0 end-0 bg-success text-white custom-badge p-2  fw-bold "> Save &#8358 700</div>
+          <div class="img-top">
+            <img class="card-img-top p-3 mt-3" src="/images/showmaxStandardLogo.png" alt="Card image">
+            <h4>&#8358 1799 <small> /month</small></h4>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class=" card card1 mx-auto p-4 mt-3">
+        <p>Stable and renewable subscription</p>
+        <p>high-defination video quality, independent viewing</p>
+        <p>Real-time delivery</p>
+        <p>
+          Highest Collection of African movies.
+        </p>
+        <p>Compatible with Mobile, PC, TV, Tablets</p>
+        <p>After-sales support, worry-free refund</p>
+        <div class="d-grid ">
+          <button type="button" id="purchaseBtn2" class="btn showmax-btn fw-bold p-2 g_btn m-2 "> Purchase Now</button>
+          <button type="button" id="purchaseBtn2SubActive" class="btn showmax-btn fw-bold p-2 g_btn m-2 hidden" disabled> Subscription Active!
+          </button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="mx-auto col-sm-12 col-md-9">
+      <div class="mx-auto text-center mt-5">
+        <div class="card p-2 card1 position-relative">
+          <div class="position-absolute top-0 end-0 bg-success text-white custom-badge p-2  fw-bold "> Save &#8358 300</div>
+          <div class="img-top">
+            <img class="card-img-top mt-3 p-3" src="/images/spotifyPremiumLogo.png" alt="Card image">
+            <h4>&#8358 599 <small> /month</small></h4>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class=" card card1 mx-auto p-4 mt-3">
+        <p>Stable and renewable subscription</p>
+        <p>Ad free music Listening </p>
+        <p>
+          High Audio Quality
+        </p>
+        <p>Real-time delivery</p>
+        <p>Compatible with Mobile, PC, TV, Tablets</p>
+        <p>After-sales support, worry-free refund</p>
+        <div class="d-grid ">
+          <button type="button" id="purchaseBtn3" class="btn spotify-btn fw-bold p-2 g_btn m-2 "> Purchase Now</button>
+          <button type="button" id="purchaseBtn3SubActive" class="btn spotify-btn fw-bold p-2 g_btn m-2 hidden" disabled> Subscription Active!
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <div class="container-fluid mt-5 whypage text-white">
+    <div class=" container p-4 mt-3 whypage">
+      <h4 class=" fw-bold text-center text-white"> Why<strong> HFLIX</strong>? </h4>
+
+      <div class="card2 mt-3 p-2 col-sm-10 mx-auto text-white">
+        <div class="card-body">
+          <img src="/images/wallet.png" style="width: 38px;">
+          <h5 class=" card-title fw-bold pt-2"> Budget-Friendly Streaming</h5>
+          <h6 class=" card-text lh-sm "> At HFLIX , we pride ourselves on offering streaming platforms premium subscriptions at a fraction of the cost. </h6>
+        </div>
+      </div>
+
+
+      <div class="card2 mt-3 p-2 col-sm-10 mx-auto text-white">
+        <div class="card-body ">
+          <img src="/images/user-lock.png" style="width: 40px;">
+          <h5 class="card-title fw-bold pt-2"> Seamless Password Reset </h5>
+          <h6 class="card-text lh-sm"> Enjoy a hassle-free password recovery experience, ensuring you're never locked out of your account for long."</h6>
+        </div>
+      </div>
+
+
+      <div class="card2 mt-5 p-2 col-sm-10 mx-auto">
+        <div class="card-body ">
+          <img src="/images/rocket-lunch.png" style="width: 40px;">
+          <h5 class="card-title fw-bold pt-2"> Quick Account Delivery </h5>
+          <h6 class="card-text lh-sm"> Get your account login & details as soon as you complete the purchase. Say goodbye to waiting thanks to our lightning-fast account delivery service</h6>
+        </div>
+      </div>
+
+      <div class="card2 mt-5 p-2 col-sm-10 mx-auto">
+        <div class="card-body col-sm-10 ">
+          <img src="/images/headset.png" style="width: 40px;">
+          <h5 class="card-title fw-bold pt-2"> Fast Customer Service </h5>
+          <h6 class="card-text lh-sm"> HFLIX boasts of its 24/7 online private customer service</h6>
+        </div>
+      </div>
+
+      <div class="card2 mt-5 p-2 col-sm-10 mx-auto">
+        <div class="card-body col-sm-10 ">
+          <img src="/images/hand-holding-heart.png" style="width: 40px;">
+          <h5 class="card-title fw-bold pt-2"> REFUND GUARANTEE </h5>
+          <h6 class="card-text lh-sm"> You have 1-5 days to request a refund </h6>
+          <a class="card-link fw-bold" href=" /LegalFolder/RefundPolicy.html"> refund policy>></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class=" container-fluid mt-4 ">
+    <div class="container accord p-3 ">
+      <h5 class="text-center mb-4"> FREQUENTLY ASKED QUESTIONS</h5>
+
+
+
+      <div class="accordion" id="accordionExample">
+
+        <div class=" accordion-item">
+          <h6 class="accordion-header" id="headingOne">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What is HFLIX ?
+            </button>
+          </h6>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              HFLIX is basically a platform that presently sells both Netfix and Showmax's premium subscription plans for 1/4 the price to users who are willing to share an account anonymously online.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item ">
+          <h6 class="accordion-header " id="headingTwo">
+            <button class="accordion-button fw-bold  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              How is this so cheap ?
+            </button>
+          </h6>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body ">
+              Our model is quite simple, we buy a premium subscription plan and then split the bill among 5 or 2, effortlessly among different people online anonymously depending on the case 😊.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item ">
+          <h6 class="accordion-header " id="headingThree">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              What subscription plan would i be paying for ?
+            </button>
+          </h6>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              For both, you are paying to share there Premium plans.
+              Netflix premium on Netflix and the Showmax plan on Showmax.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item ">
+          <h6 class="accordion-header" id="headingfour">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+              What number of people shares an account ?
+            </button>
+          </h6>
+          <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Well it depends. If for Netflix, 5 different people anonymously shares an account and for Showmax, 2 different people shares an account anonymously.
+            </div>
+          </div>
+          <div class="accordion-item ">
+            <h6 class="accordion-header" id="headingfive">
+              <button class="accordion-button fw-bold  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                How long do my subscription last for ?
+              </button>
+            </h6>
+            <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                For both a renewed plan or a new plan, you use your subscription for 30days before it expires.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item ">
+            <h6 class="accordion-header" id="headingsix">
+              <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                Is this even legal ?
+              </button>
+            </h6>
+            <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Yes of course, both Netflix and Showmax are okay with this, so don't be scared.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Last CTA Page -->
+  <div class="container-fluid mt-5 mb-5 ">
+    <div class="container">
+      <div class="card card1 p-3 text-center">
+        <div class="card-body mx-auto d-grid">
+          <h6 style="font-size: 19px;" class="fw-bold lastcta-text"> Why pay full price for streaming<br>when you have <strong> HFLIX 🤨</strong></h6>
+          <button type="button" class=" btn fw-bold"> Get Started Now </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container-fluid footer bg-dark  pt-4">
+      <div class="container text-white ps-4 pe-5">
+        <p class=" text-start"> <a href=" /LegalFolder/privacypolicy.html"> Policy</a></p>
+        <p class=" text-start"> <a href="/About Html File/Aboutus.html "> About Us </a></p>
+        <div class="wrapper">
+          <a href="#" class="icon instagram text-center">
+            <span><i class="fab fa-instagram fw-bold"></i></span>
+          </a>
+          <a href="https://wa.me/message/NRJID6MNDVPFM1" class="icon whatsapp text-center">
+            <span><i class="fab fa-whatsapp fw-bold"></i></span>
+          </a>
+        </div>
+        <p class="text-start small pb-0 pt-2"> HFLIX © 2024 by STONE'SCODE</p>
+        <p class="text-start small pt-0"> All services are copyrights of their respective owners.</p>
+
+      </div>
+    </div>
+
+
+    <div class="overlay hidden"></div>
+
+  </footer>
+
+
+  <!-- paystack -->
+  <script>
+    const jsFileCount = 10
+  </script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <script src="/bootstrap/js/bootstrap.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+
+  <script type="module" src="/auth.js"></script>
+  <!-- <script type="module" src="/google-auth.js"></script> -->
+  <script type="module" src="/email-password-auth.js"></script>
+  <script type="module" src="/buttonStates.js"></script>
+  <script type="module" src="/payment-code.js"></script>
+  <script type="module" src="/loader.js"></script>
+
+</body>
+
+</html>

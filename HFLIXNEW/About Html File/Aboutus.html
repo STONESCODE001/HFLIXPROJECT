@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="res/chartist.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+  
+  
+    <style>
+    body{
+  background-color: rgba(229, 228, 226, 0.5)!important;
+
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size: 30px!important;
+  font-family: 'Inter', sans-serif;
+}
+p,a{
+  font-family: 'Roboto', sans-serif!important;
+}
+.text-end>a{
+  color: red!important;
+  font-weight: bold!important;
+  text-decoration: none!important;
+}
+.gap-2> button> a{
+  color: white!important;
+  text-decoration: none!important;
+}
+
+/* Nav*/
+.nav-text{
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.loginnav{
+  border-radius: 4px!important;
+  background-color: #F5F5F5!important;
+}
+/* Dropdown of the nav bar profile picture*/
+.dropdownnav{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-contentnav {
+  background-color: #412323;
+  right: 0;
+  border-radius: 5px!important;
+  display: none;
+  min-width: 220px!important;
+  position: absolute;
+  box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  /*padding: 12px 16px;*/
+  z-index: 1;
+}
+.dropdownnav:hover .dropdown-contentnav{
+  display: block;
+  transition: 1ms ease-in-out;
+}
+
+.nav-link{
+  text-decoration: none;
+  font-size: 0.9rem!important;
+  font-weight: 400!important;
+}
+
+.nav-link:hover {
+  background-color: #E50419!important;
+}
+
+.loaderDiv {
+  z-index: 2 !important;
+}
+
+.overlayForLoader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(15px);
+  z-index: 1 !important;
+}
+.hidden {
+      display: none;
+    }
+
+/* footer*/
+.text-start> a{
+  font-weight: bold!important;
+  color: #E50419!important;
+  text-shadow: 0 0 90px white;
+}
+.wrapper .icon {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+.footer{
+  border: 1px solid rgba(229, 228, 226, 0.1);
+}
+ </style>
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+  
+ </head>
+
+<body>
+<nav class="navbar pe-3 ps-3 ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;" </a>
+
+        <div>
+          <a class="nav-text" href="/index.html">
+            <p class="d-none d-sm-inline pe-3">
+              Home
+            </p>
+          </a>
+          <a class="nav-text" href="/dashboard/login-dashboard.html">
+            <p class=" d-none d-sm-inline pe-3">
+              Subscription
+            </p>
+          </a>
+          <a class="nav-text" href="/Affilate/affiliate.html">
+            <p class="d-none d-sm-inline pe-3">
+              Affiliate
+            </p>
+          </a>
+          <a class="nav-text" href="/LegalFolder/privacypolicy.html">
+            <p class="d-none d-sm-inline pe-3">
+              Policies
+            </p>
+          </a>
+        </div>
+
+
+
+
+
+        <div class="dropdownnav">
+          <!-- formal width below was 39px -->
+          <img id="userProfile" src="/images/person-circle.svg" style="width:42px;">
+
+
+          <div class="dropdown-contentnav ">
+            <div class="dropdown-contentnav mx-auto d-flex flex-column flex-shrink-0 p-3 fw-bold">
+
+
+              <!-- removed style="display: none;" below-->
+              <p id="userNameNav" class="mb-0 mb-md-0 me-md-auto text-white"> Welcome! <br> signedinuser@gmail.com
+              </p>
+
+              <!-- removed style="display: block;" below-->
+              <a href="/acctcreation/login.html" id="signInBtn" class="text-center mb-0 mb-md-0  p-2 loginnav text-decoration-none text-dark">
+                Sign in
+              </a>
+
+              <hr class="text-white card-divider ">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item d-md-none">
+                  <a href="/index.html" class="nav-link text-white" aria-current="page">
+                    <img src="/images/home (2).png" class="bi me-2" width="18" height="18" oncontextmenu="return false;">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item " id="navSubBtn">
+                  <a href="/dashboard/login-dashboard.html" class=" nav-link text-white" aria-current="page">
+                    <img src="/images/shopping-cart (1)wh.png" class="bi me-2" width="18" height="18">
+                    <use xlink:href="#home" />
+                    Subscription
+                  </a>
+                </li>
+                <li>
+                  <a href="/Affilate/affiliate.html" class="nav-link text-white">
+                    <img src="/images/handshake (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2" /></img>
+                    Affilate
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <img src="/images/user-headset (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#grid" /></img>
+                    Support
+                  </a>
+                </li>
+                <li>
+                  <a href="/LegalFolder/privacypolicy.html" class="nav-link text-white">
+                    <img src="/images/policies-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#people-circle" /></img>
+                    Policies
+                  </a>
+                </li>
+                
+              </ul>
+
+              <hr class=" text-white">
+
+              <!-- removed style="display: none;" below-->
+              <p id="signOutBtn" class="align-items-center mb-0 mb-md-0 me-md-auto text-white ">
+
+                <img src="/images/sign-out-wh-nav (1).png" class="bi me-2" width="16" height="16">
+                <use xlink:href="#people-circle" /></img>
+
+
+                Sign Out
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </nav>
+
+
+  <!-- Loader Code-->
+  <div class="overlayForLoader">
+    <div class="container-fluid">
+      <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="text-center loaderDiv">
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container-fluid mt-5">
+  <div class="container p-4 mt-3">
+<h1 class="fw-bold"> About Us</h1><hr>
+<p>HFLIX is a subscription sharing website that allows to connect subscription owners with co-subscribers to save money. HFLIX takes the carpooling philosophy and extends it to the world of subscriptions. Over past three years, We have won the favor of hundreds of thousands of streaming fans by offering them quality service and attentive support, HFLIX is grateful for the appreciation and preference of loyal user, and our business is constantly expanding to prepare for new challenges and conquer more fields. We will create more value and provide more services for user in the field of streaming media.<br></p>
+<br>
+<h4 class="fw-bold">Secure Products</h4><hr><p>
+As HFLIX represents a solid adversary against scammers and hacks, we promise all the products sold on HFLIXare safe and legit, which means the product was obtained legally, there is no involvement of cheating software and illegal transaction. After the user pays, products will be delivered in real time, the whole process will be smooth and fast without waiting. HFLIX makes it possible to share subscriptions securely and legally.
+</p>
+<h4 class="fw-bold">Legit Products</h4><hr>
+<p>Is sharing access to a product or service legal?<br>
+<br>
+The answer is YES, the Group Subscription Plans are made for that.<br>
+<br>
+After registering with HFLIX, you will automatically join the HFLIX virtual family. You will be entitled to a HFLIX subscription virtual home sharing service.<br>
+<br>
+Although they have a higher price compared to basic plans, Group Premium Subscription Plans offer users the possibility to share access to products and services in a group, provided that the terms of use are respected. HFLIX provides users with a platform to make sharing costs among members of Group Subscription Plans easier.<br>
+<br></p>
+<h4 class="fw-bold">Instant Response</h4><hr>
+<p>Our HFLIX customer service team are consist of well-trained streaming fans who are working in shift to offer you 24/7 online service, what make them stand out are the fact that they take pleasure in helping others, HFLIX is confident that they will offer you attentive service with enduring passion and abundant gaming knowledge. The internal system in HFLIX will distribute workload effectively to make sure every customer gets timely and empathetic service.<br>
+<br></p>
+<h4 class="fw-bold">Safe and Easy Payment</h4><hr>
+<p>HFLIX supports multiple payment methods and has stared firm partnerships with mainstream payment service providers such as Visa, MasterCard, Paystack, and etc. The paying process will certified by these third-party payment companies just to make sure you will always have an option to refund. The whole process of purchase is very simple and easy to comprehend, you are able to trace your order as well, please feel free to contact our 24/7 live support team if you have any concerns.
+</p>
+
+     <div class="d-grid gap-2">
+       <button type="button" class="btn btn-secondary fw-bold"> <a href="/About Html File/Aboutus.html"> About Us</a></button>
+       <button type="buttom" class="btn btn-secondary fw-bold"> <a href=" /About Html File/ContactUs.html"> Contact Us </a></button>
+     </div>
+   </div>
+</div>
+
+<footer>
+  <div class="container-fluid footer bg-dark  pt-4">
+    <div class="container text-white ps-4 pe-5">
+      <p class="text-start"> <a href="/index.html"> Home </a> </p>
+      <p class=" text-start"> <a href=" /LegalFolder/privacypolicy.html"> Policy</a></p>
+      <p class=" text-start"> <a href="/About Html File/Aboutus.html "> About Us </a></p>
+      <div class="wrapper">
+        <a href="#" class="icon instagram text-center">
+          <span><i class="fab fa-instagram fw-bold"></i></span>
+        </a>
+        <a href="#" class="icon whatsapp text-center">
+          <span><i class="fab fa-whatsapp fw-bold"></i></span>
+        </a>
+      </div>
+      <p class="text-start small pb-0 pt-2"> HFLIX © 2023 by STONECODE</p>
+      <p class="text-start small pt-0"> All services are copyrights of their respective owners.</p>
+
+    </div>
+  </div>
+</footer>
+ 
+ <!-- auth state js file -->
+  <script type="module" src="/auth.js"></script>
+  <script type="module" src="/email-password-auth.js"></script>
+  <script type="module" src="/loader.js"></script>
+</body>
+
+</html>

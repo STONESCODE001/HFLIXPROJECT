@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="res/chartist.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+
+  <style>
+    body {
+      background-color: rgba(229, 228, 226, 0.5) !important;
+
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 30px !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    p,
+    a {
+      font-family: 'Roboto', sans-serif !important;
+    }
+
+    .text-end>a {
+      color: red !important;
+      font-weight: bold !important;
+      text-decoration: none !important;
+    }
+
+    .gap-2>button>a {
+      color: white !important;
+      text-decoration: none !important;
+    }
+
+
+    /* Nav*/
+    .nav-text {
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .loginnav {
+      border-radius: 4px !important;
+      background-color: #F5F5F5 !important;
+    }
+
+    /* Dropdown of the nav bar profile picture*/
+    .dropdownnav {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-contentnav {
+      background-color: #3F2424;
+      right: 0;
+      border-radius: 5px !important;
+      display: none;
+      min-width: 220px !important;
+      position: absolute;
+      box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+      /*padding: 12px 16px;*/
+      z-index: 1;
+    }
+
+    .dropdownnav:hover .dropdown-contentnav {
+      display: block;
+      transition: 1ms ease-in-out;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #E50419 !important;
+    }
+
+
+
+    /* footer*/
+    .text-start>a {
+      font-weight: bold !important;
+      color: #E50419 !important;
+      text-shadow: 0 0 90px white;
+    }
+
+    .wrapper .icon {
+      position: relative;
+      background-color: #ffffff;
+      border-radius: 50%;
+      margin: 5px;
+      width: 35px;
+      height: 35px;
+      font-size: 25px;
+      display: inline-block;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer {
+      border: 1px solid rgba(229, 228, 226, 0.1);
+    }
+
+    /* Loader Style Code*/
+    .loaderDiv {
+      z-index: 2 !important;
+    }
+
+    .overlayForLoader {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(15px);
+      z-index: 1 !important;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+  </style>
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+
+</head>
+
+<body>
+  <nav class="navbar pe-3 ps-3 ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;" </a>
+
+        <div>
+          <a class="nav-text" href="/index.html">
+            <p class="d-none d-sm-inline pe-3">
+              Home
+            </p>
+          </a>
+          <a class="nav-text" href="/dashboard/login-dashboard.html">
+            <p class=" d-none d-sm-inline pe-3">
+              Subscription
+            </p>
+          </a>
+          <a class="nav-text" href="/Affilate/affiliate.html">
+            <p class="d-none d-sm-inline pe-3">
+              Affiliate
+            </p>
+          </a>
+          <a class="nav-text" href="/LegalFolder/privacypolicy.html">
+            <p class="d-none d-sm-inline pe-3">
+              Policies
+            </p>
+          </a>
+        </div>
+
+
+
+
+
+        <div class="dropdownnav">
+          <!-- formal width below was 39px -->
+          <img id="userProfile" src="/images/person-circle.svg" style="width:42px;">
+
+
+          <div class="dropdown-contentnav ">
+            <div class="dropdown-contentnav mx-auto d-flex flex-column flex-shrink-0 p-3 fw-bold">
+
+
+              <!-- removed style="display: none;" below-->
+              <p id="userNameNav" class="mb-0 mb-md-0 me-md-auto text-white"> Welcome! <br> signedinuser@gmail.com
+              </p>
+
+              <!-- removed style="display: block;" below-->
+              <a href="/acctcreation/login.html" id="signInBtn" class="text-center mb-0 mb-md-0  p-2 loginnav text-decoration-none text-dark">
+                Sign in
+              </a>
+
+              <hr class="text-white card-divider ">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item d-md-none">
+                  <a href="/index.html" class="nav-link text-white" aria-current="page">
+                    <img src="/images/home (2).png" class="bi me-2" width="18" height="18" oncontextmenu="return false;">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item " id="navSubBtn">
+                  <a href="/dashboard/login-dashboard.html" class=" nav-link text-white" aria-current="page">
+                    <img src="/images/shopping-cart (1)wh.png" class="bi me-2" width="18" height="18">
+                    <use xlink:href="#home" />
+                    Subscription
+                  </a>
+                </li>
+                <li>
+                  <a href="/Affilate/affiliate.html" class="nav-link text-white">
+                    <img src="/images/handshake (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2" /></img>
+                    Affilate
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <img src="/images/user-headset (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#grid" /></img>
+                    Support
+                  </a>
+                </li>
+                <li>
+                  <a href="/LegalFolder/privacypolicy.html" class="nav-link text-white">
+                    <img src="/images/policies-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#people-circle" /></img>
+                    Policies
+                  </a>
+                </li>
+                <li>
+                  <a href="/About Html File/Aboutus.html" class=" nav-link text-white">
+                    <img src="/images/aboutus-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#table" /></img>
+                    About Us
+                  </a>
+                </li>
+              </ul>
+
+              <hr class=" text-white">
+
+              <!-- removed style="display: none;" below-->
+              <p id="signOutBtn" class="align-items-center mb-0 mb-md-0 me-md-auto text-white ">
+
+                <img src="/images/sign-out-wh-nav (1).png" class="bi me-2" width="16" height="16">
+                <use xlink:href="#people-circle" /></img>
+
+
+                Sign Out
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Loader Code-->
+  <div class="overlayForLoader">
+    <div class="container-fluid">
+      <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="text-center loaderDiv">
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-3">
+    <div class="container p-5">
+
+      <h1 class="fw-bold">Hflix Privacy Policy</h1>
+      <hr>
+
+      <p>We respect your privacy and strive to protect the privacy of your personal data. We recognize that the exciting growth of the Internet and online services has raised questions about the nature, use, and confidentiality of the information collected about consumers. We want you to know that we apply our long-term commitment to privacy protection to our online and Internet activities.<br>
+        <br>
+        By providing us with your personal information, you agree to this privacy statement and the collection, use, access, transmission, storage and processing of your personal information described in this privacy statement.<br>
+        <br>
+        We will review this privacy policy on a regular basis and may modify or add specific instructions, policies and terms from time to time. If there are any major changes to this privacy policy, we will use the contact information you provide us to notify you, and if required by law, we will notify you to give you the opportunity to opt out of these changes. Otherwise, with regard to the personal data provided to us through the HFLIX.com website or other means, your continued use of the HFLIX.com website or other products or services of the Group, or your continuing relationship with us or the Group will be regarded as you Accept and agree to this privacy policy (as amended from time to time).<br>
+        <br>
+        You can use HFLIX's web pages without any personal data instructions; however, if the data subject wishes to use special corporate services through our website, personal data may need to be processed. If the processing of personal data is necessary and there is no legal basis for such processing, we usually obtain the consent of the data subject.<br>
+        <br>
+        HFLIX.com.ng will take all practical steps to ensure the security of your personal data and avoid unauthorized or accidental access, deletion or other use of your personal data. This includes appropriate physical, technical and procedural security methods to ensure that your personal data can only be accessed by authorized personnel. However, in principle, Internet-based data transmission may have security loopholes, so absolute protection may not be guaranteed.<br>
+        <br>
+        The processing of personal data, such as the name, address, email address, or phone number of the data subject, should always comply with the General Data Protection Regulation (GDPR) and comply with the regulations applicable to HFLIX for data protection in specific countries/regions. Through this data protection statement, our company hopes to inform the public of the nature, scope and purpose of the personal data we collect, use and process. In addition, through this data protection declaration, data subjects are informed of their rights.<br>
+        <br>
+        In addition to the GDPR, please note that we collect, store, and process personal personal information in accordance with the 2010 Personal Data Protection Act ("PDPA") and Nigerian laws.<br>
+        <br>
+        Please read the privacy statement below to understand how we use personal information that may be collected from you. We will not use or share your information with anyone unless stated in this privacy policy.
+        <br>
+      </p>
+      <h4 class="fw-bold">1. Definition</h4>
+      <hr>
+      <p>HFLIX's data protection statement is based on the terms used by European legislators to pass the General Data Protection Regulation (GDPR). Our data protection statement should be clear and understandable to the public, customers and partners. To ensure this, we must first explain the terminology used.<br>
+        <br>
+        In this data protection statement, we specifically use the following terms:<br>
+        <br>
+        personal information<br>
+        <br>
+        Personal data refers to any information related to an identified or identifiable natural person ("data subject"). An identifiable natural person is a natural person that can be directly or indirectly identified, especially by referring to names, identification numbers, location data, online identifiers, or specific physical, physiological, genetic, spiritual, economic, cultural, or social identities of the natural person.
+
+        Data subject<br>
+        <br>
+        The data subject is any identified or identifiable natural person whose personal data is processed by the controller responsible for processing.<br>
+        <br>
+        Processing<br>
+        <br>
+        Processing is any operation or set of operations performed on personal data or personal data sets, whether through automated means, such as collection, recording, organization, structuring, storage, adaptation or modification, retrieval, consultation, use, transmission, or dissemination Or provide in other ways, align or combine, restrict, delete or destroy and disclose.<br>
+        <br>
+        Processing restrictions<br>
+        <br>
+        Processing restriction is the marking of stored personal data in order to restrict future processing.<br>
+        <br>
+        Anatomy<br>
+        <br>
+        Analysis refers to any form of automatic processing of personal data, including the use of personal data to evaluate certain personal aspects related to a natural person, especially analysis or prediction related to the performance of the natural person in terms of work, economic status, health, and personal preferences Aspect, interest, reliability, behavior, location, or action of
+        <br><br>
+        Alias<br>
+        <br>
+        Pseudonymization refers to the personal data processing method in which personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is stored separately and is subject to technical and organizational measures to ensure that personal data is not Belongs to an identified or identifiable natural person.<br>
+        <br>
+      </p>
+      <h4 class="fw-bold">2.Cookie</h4>
+      <hr>
+      <p>When you log in, we will also set up multiple cookies to save your login information and your screen display choices. The login cookie lasts for two days, and the screen option cookie lasts for one year. If you choose "Remember Me", your login will last for two weeks. If you log out of your account, the login cookie will be deleted.
+        <br>
+        Cookies are used for the following purposes:<br>
+        <br>
+        For statistical purposes, through [analysis of aggregated data on the traffic and usage of our website]<br>
+        <br>
+        We create statistics to help us understand how you visit HFLIX.com.ng, which allows us to improve the structure of HFLIX.com.ng and its content, thereby improving your experience;<br>
+        <br>
+        Remember your settings between browsing sessions and customize the site to better meet your needs and preferences, such as choosing a display language or currency.<br>
+        <br>
+        To achieve the above goals, this website uses two basic types of cookies, session cookies and persistent cookies. Session cookies are temporary files stored in your browser until you log out, leave the website, or close your browser. Persistent cookies will be stored in your browser for a longer period of time, as specified in the cookie parameters or until you delete the cookie.<br>
+        <br>
+        The default settings of your browser may be set to allow the storage of cookies. You can change the settings of your browser and delete or block cookies. For details, refer to your browser's documentation.<br>
+        <br>
+        You can change the way cookies are used and manage the consent expressed as part of our website’s privacy settings or through your browser, including blocking or deleting consent from the website. To do this, please change your browser settings. The deletion method differs depending on the web browser used. You can find information about deletion here:<br>
+        <br>
+        a) Internet Explorer browser cookie can be modified from the following location: Tools Internet Options Privacy;<br>
+        <br>
+        b) Mozilla Firefox: Tools -> Options -> Privacy;<br>
+        <br>
+        c) Google Chrome: Set to display advanced privacy settings and set cookies.<br>
+        <br>
+      </p>
+      <h4 class="fw-bold">Who Analysis</h4>
+      <hr>
+      <p>Who do we share your data with<br>
+        <br>
+        How long we keep your data<br>
+        <br>
+        For users who register on our website (if any), we also store the personal information they provide in their user profile. All users can view, edit or delete their personal information at any time (unless they cannot change their username). The site administrator can also view and edit this information.<br>
+        <br>
+        What rights do you have over your data<br>
+        <br>
+        If you have an account or leave a comment on this website, you can request to receive an exported file of the personal data we hold about you, including any data you provide to us. You can also ask us to delete any personal data we hold about you. This does not include any data that we are obligated to keep for administrative, legal or security purposes.<br>
+        <br>
+      </p>
+      <h4 class="fw-bold">According rights under GDPR</h4><br>
+      <p>According to the GDPR, you also have the following rights:
+        <br><br>
+        The right to know is satisfied through this notice.
+        <br><br>
+        Right to delete. If personal data is no longer needed for the purpose of collection or other processing, if consent is withdrawn or objection is filed and there is no other legal basis, you have the right to delete and no longer process your data for processing. If we disclose personal data, when I raise a question to a third party, we will inform them about the deletion of personal data, unless it is impossible or involves a disproportionate effort.<br>
+        <br>
+        The right to restrict processing. If there are reasons to restrict processing, for example, if you question the accuracy of your personal data, it will only be stored and processed in other ways if you agree to or exercise legal claims, or to protect the rights of other natural or legal persons. We have disclosed relevant personal data to third parties, and we will inform them of the restrictions on the processing of personal data, unless it is impossible or involves disproportionate efforts. We will notify you before lifting the restrictions.<br>
+        <br>
+        The right to object to processing. You have the right to object to processing based on legitimate interests (including analysis) and direct marketing (including analysis). We will no longer process your data unless we have a compelling legal reason to process it, or we need to process the data to establish, exercise or defend legal claims.<br>
+        <br>
+        Portability. You have the right to receive the personal data you provide to us in a structured, commonly used and machine-readable format, and to transmit these data to another data controller.<br>
+        <br>
+      </p>
+      <h4 class="fw-bold">5. Third-party login and authorization</h4>
+      <hr>
+      <p>If you choose to log in using a third-party authentication service (such as Google or Facebook), certain data such as your name and email address may be retrieved from that service. By choosing this method, you accept the above-mentioned services to communicate these data to us.<br>
+        <br>
+        When you log in, we will ask you if you want to receive gamsgo advertising promotion through whatsapp. Once you fill in your whatsapp phone number, you are deemed to have agreed.<br>
+        <br>
+      </p>
+      <h4 class="fw-bold">If General</h4>
+      <hr>
+      <p>If this privacy policy is translated into any other language, and there is any inconsistency or conflict between the English and translated versions of this privacy policy, the English version shall prevail.<br>
+        <br>
+      </p>
+
+      <div class="d-grid gap-2">
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href="/LegalFolder/AMLpolicy.html "> AML POLICY </a>
+        </button>
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href=" /LegalFolder/Copyright.html"> COPYRIGHT</a>
+        </button>
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href=" /LegalFolder/HflixT&C.html"> HFLIX T & C</a>
+        </button>
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href="/LegalFolder/privacypolicy.html"> Privacy Policy</a>
+        </button>
+        <button type=" button" class=" btn btn-secondary fw-bold">
+          <a href=" /LegalFolder/RefundPolicy.html"> Refund Policy</a>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container-fluid footer bg-dark  pt-4">
+      <div class="container text-white ps-4 pe-5">
+        <p class="text-start"> <a href="/index.html"> Home </a> </p>
+        <p class=" text-start"> <a href=" /LegalFolder/privacypolicy.html"> Policy</a></p>
+        <p class=" text-start"> <a href="/About Html File/Aboutus.html "> About Us </a></p>
+        <div class="wrapper">
+          <a href="#" class="icon instagram text-center">
+            <span><i class="fab fa-instagram fw-bold"></i></span>
+          </a>
+          <a href="#" class="icon whatsapp text-center">
+            <span><i class="fab fa-whatsapp fw-bold"></i></span>
+          </a>
+        </div>
+        <p class="text-start small pb-0 pt-2"> HFLIX © 2023 by STONECODE</p>
+        <p class="text-start small pt-0"> All services are copyrights of their respective owners.</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/auth.js"></script>
+  <script type="module" src="/loader.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #F8F9FA;
+}
+h1,h2, h3, h4 {
+  font-family: 'Inter', sans-serif;
+}
+p,a{
+  font-family: 'Roboto', sans-serif!important;
+}
+
+
+
+
+
+
+/* Nav*/
+.nav-text{
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.loginnav{
+  border-radius: 4px!important;
+  background-color: #F5F5F5!important;
+}
+/* Dropdown of the nav bar profile picture*/
+.dropdownnav{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-contentnav {
+  background-color: #412323;
+  right: 0;
+  border-radius: 5px!important;
+  display: none;
+  min-width: 220px!important;
+  position: absolute;
+  box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  /*padding: 12px 16px;*/
+  z-index: 1;
+}
+.dropdownnav:hover .dropdown-contentnav{
+  display: block;
+  transition: 1ms ease-in-out;
+}
+
+.nav-link{
+  text-decoration: none;
+  font-size: 0.9rem!important;
+  font-weight: 400!important;
+}
+
+.nav-link:hover {
+  background-color: #E50419!important;
+}
+
+/* Headline */
+strong{
+  color: #E50419;
+}
+
+/* offer page*/
+
+.card{
+  border-radius: 20px!important;
+}
+.card-img-top {
+  width: 210px !important;
+}
+ .card1{ /* first card */
+  border-radius: 20px!important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.custom-badge {
+  border-radius: 0 20px 0 20px;
+}
+
+small {
+  /* the /month style*/
+  color: #E50914;
+  opacity: 60%;
+  font-size: 19px !important;
+}
+
+.d-grid> .btn{
+  background-color: #E50914!important;
+  border-radius: 10px!important;
+  color: white!important;
+  box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*.showmax-btn{
+  background: rgb(255, 0, 85)!important;
+  background: linear-gradient(90deg, rgba(255, 0, 85, 1) 0%, rgba(255, 74, 74, 1) 50%, rgba(255, 130, 66, 1) 100%)!important;
+}*/
+
+/* Why Us Page*/
+
+.page-header{/* the first text of tge why us page*/
+  font-size: 19px;
+}
+.whypage{ /* the background of the why us page*/
+  background-color: #490F39;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  opacity: 100%;
+}
+.card2{ /* card of the why us page*/
+  border-radius: 20px;
+  background-color: #490F39!important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+/*.card-title{ h1 text of why us card
+  font-size: 18px!important;
+}
+.card-text{
+  font-size: 14px!important;
+  opacity: 70%!important;
+} */
+.card-text {
+  color: #FFFFFF9C!important;
+}
+.card-link {
+  font-size: 14px!important;
+  color: #E50419!important;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+/* last cta page*/
+.lastcta-text{
+  font-size: 17px!important;
+}
+
+/* footer*/
+.text-start> a{
+  font-weight: bold!important;
+  color: #E50419!important;
+  text-shadow: 0 0 90px white;
+}
+.wrapper .icon {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+.footer{
+  border: 1px solid rgba(229, 228, 226, 0.1);
+}
+
+
+
+/* The Payment Modal Code*/
+/* fpr the body*/
+.bodyForModal {
+  position: fixed !important;
+  height: 100% !important;
+  overflow-y: hidden !important;
+}
+.paymtModal{
+  z-index: 2!important;
+  border: 1px solid darkgreen!important;
+  border-radius: 10px!important;
+}
+.paymtModHeader{
+  border-top-left-radius: 10px!important;
+  border-top-right-radius: 10px!important;
+}
+.success-sub-btn > a{
+  color: #000000;
+  text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  z-index: 1;
+}
+.hidden{
+  display: none!important;
+}
+
+
+
+/* Loader Style Code*/
+.loaderDiv{
+  z-index: 2!important;
+}
+
+.overlayForLoader{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(15px);
+  z-index: 1!important;
+}

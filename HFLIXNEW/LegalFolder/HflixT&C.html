@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HFLIX - Stream Smarter 😎 by Streaming Cheaper</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="res/chartist.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+
+  <style>
+    body {
+      background-color: rgba(229, 228, 226, 0.5) !important;
+
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 30px !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    p,
+    a {
+      font-family: 'Roboto', sans-serif !important;
+    }
+
+    .text-end>a {
+      color: red !important;
+      font-weight: bold !important;
+      text-decoration: none !important;
+    }
+
+    .gap-2>button>a {
+      color: white !important;
+      text-decoration: none !important;
+    }
+
+    /* Nav*/
+    .nav-text {
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .loginnav {
+      border-radius: 4px !important;
+      background-color: #F5F5F5 !important;
+    }
+
+    /* Dropdown of the nav bar profile picture*/
+    .dropdownnav {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-contentnav {
+      background-color: #3F2424;
+      right: 0;
+      border-radius: 5px !important;
+      display: none;
+      min-width: 220px !important;
+      position: absolute;
+      box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+      /*padding: 12px 16px;*/
+      z-index: 1;
+    }
+
+    .dropdownnav:hover .dropdown-contentnav {
+      display: block;
+      transition: 1ms ease-in-out;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+    }
+
+    .nav-link:hover {
+      background-color: #E50419 !important;
+    }
+
+    /* Loader Style Code*/
+    .loaderDiv {
+      z-index: 2 !important;
+    }
+
+    .overlayForLoader {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(15px);
+      z-index: 1 !important;
+    }
+    
+    .hidden {
+      display: none;
+    }
+
+    /* footer*/
+    .text-start>a {
+      font-weight: bold !important;
+      color: #E50419 !important;
+      text-shadow: 0 0 90px white;
+    }
+
+    .wrapper .icon {
+      position: relative;
+      background-color: #ffffff;
+      border-radius: 50%;
+      margin: 5px;
+      width: 35px;
+      height: 35px;
+      font-size: 25px;
+      display: inline-block;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer {
+      border: 1px solid rgba(229, 228, 226, 0.1);
+    }
+  </style>
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+
+</head>
+
+<body>
+  <nav class="navbar ps-3 pe-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;" </a>
+
+        <div>
+          <a class="nav-text" href="/index.html">
+            <p class="d-none d-sm-inline pe-3">
+              Home
+            </p>
+          </a>
+          <a class="nav-text" href="/dashboard/login-dashboard.html">
+            <p class=" d-none d-sm-inline pe-3">
+              Subscription
+            </p>
+          </a>
+          <a class="nav-text" href="/Affilate/affiliate.html">
+            <p class="d-none d-sm-inline pe-3">
+              Affiliate
+            </p>
+          </a>
+          <a class="nav-text" href="/LegalFolder/privacypolicy.html">
+            <p class="d-none d-sm-inline pe-3">
+              Policies
+            </p>
+          </a>
+        </div>
+
+
+
+
+
+        <div class="dropdownnav">
+          <!-- formal width below was 39px -->
+          <img id="userProfile" src="/images/person-circle.svg" style="width:42px;">
+
+
+          <div class="dropdown-contentnav ">
+            <div class="dropdown-contentnav mx-auto d-flex flex-column flex-shrink-0 p-3 fw-bold">
+
+
+              <!-- removed style="display: none;" below-->
+              <p id="userNameNav" class="mb-0 mb-md-0 me-md-auto text-white"> Welcome! <br> signedinuser@gmail.com
+              </p>
+
+              <!-- removed style="display: block;" below-->
+              <a href="/acctcreation/login.html" id="signInBtn" class="text-center mb-0 mb-md-0  p-2 loginnav text-decoration-none text-dark">
+                Sign in
+              </a>
+
+              <hr class="text-white card-divider ">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item d-md-none">
+                  <a href="/index.html" class="nav-link text-white" aria-current="page">
+                    <img src="/images/home (2).png" class="bi me-2" width="18" height="18" oncontextmenu="return false;">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item " id="navSubBtn">
+                  <a href="/dashboard/login-dashboard.html" class=" nav-link text-white" aria-current="page">
+                    <img src="/images/shopping-cart (1)wh.png" class="bi me-2" width="18" height="18">
+                    <use xlink:href="#home" />
+                    Subscription
+                  </a>
+                </li>
+                <li>
+                  <a href="/Affilate/affiliate.html" class="nav-link text-white">
+                    <img src="/images/handshake (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2" /></img>
+                    Affilate
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <img src="/images/user-headset (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#grid" /></img>
+                    Support
+                  </a>
+                </li>
+                <li>
+                  <a href="/LegalFolder/privacypolicy.html" class="nav-link text-white">
+                    <img src="/images/policies-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#people-circle" /></img>
+                    Policies
+                  </a>
+                </li>
+                <li>
+                  <a href="/About Html File/Aboutus.html" class=" nav-link text-white">
+                    <img src="/images/aboutus-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#table" /></img>
+                    About Us
+                  </a>
+                </li>
+              </ul>
+
+              <hr class=" text-white">
+
+              <!-- removed style="display: none;" below-->
+              <p id="signOutBtn" class="align-items-center mb-0 mb-md-0 me-md-auto text-white ">
+
+                <img src="/images/sign-out-wh-nav (1).png" class="bi me-2" width="16" height="16">
+                <use xlink:href="#people-circle" /></img>
+
+
+                Sign Out
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Loader Code-->
+  <div class="overlayForLoader">
+    <div class="container-fluid">
+      <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="text-center loaderDiv">
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid mt-5">
+    <div class="container p-4 mt-3">
+
+      <h1 class="fw-bold"> Terms and conditions of use</h1>
+      <hr>
+      <h5 class="fw-bold">Terms and conditions</h5>
+      <p>Before you use the platform, please read the following terms and conditions carefully. By using the platform, you agree to and be bound by these terms and conditions. If you do not agree to any of these terms and conditions, please do not use the platform.<br></p>
+      <br>
+      <h5 class="fw-bold">1. General</h5>
+      <hr>
+      <p>1.1 This agreement and all attached or mentioned schedules and appendices (if any) ("Agreement") are an agreement between you and HFLIX.com.ng ("HFLIX", "us" or "our").
+        <br> <br>
+        1.2 This agreement shall govern, among other things<br>
+        <br>
+        (a) Provide HFLIX service (see below for definition);
+        (b) Your use of the platform (see below for definition).
+        1.3 The service is intended and can only be used by:<br>
+        <br>
+        (a) Individuals who are over 18 years of age and can enter into a legally binding contract under applicable law, and
+        (b) Individuals under the age of 18 and under the consent and direct supervision of their parents or legal guardians. Any individual under the age of 18 shall be deemed to have obtained the approval of his legal guardian or parent for all transactions conducted under this agreement, and the legal guardian or parent shall be responsible for any and all activities carried out by the individual under this agreement.<br>
+      </p>
+      <h5 class="fw-bold">2. Definition and interpretation</h5>
+      <hr>
+      <p>2.1 In these terms, unless the context requires otherwise, the following words have the following meanings:<br>
+        <br>
+        Account refers to the account created and used by you to access or use the platform;<br>
+        <br>
+        A working day refers to a day that is not a Saturday, Sunday or public holiday or bank holiday in Nigeria;<br>
+        <br>
+        Buyer refers to the buyer of any goods and/or services;<br>
+        <br>
+        Goods and/or services refer to digital items, goods and/or services that are displayed, listed, and/or provided by sellers through or on the platform.<br>
+        <br>
+        HFLIX service refers to the services and functions provided or provided by HFLIX through or on the platform from time to time, including but not limited to the services provided by HFLIX to facilitate the conclusion of sales contracts between buyers and sellers;<br>
+        <br>
+        Information refers to any information, details, content, size, data, map, location, photos, text, description, specifications, audio or video clips, graphics and/or other materials;<br>
+        <br>
+        Intellectual property refers to patents, registered designs, designs, copyrights, names, marks, trade names, trademarks, service marks and logos and all other knowledge, industry and/or ownership;<br>
+        <br>
+        A sales contract refers to an agreement reached between the relevant seller and the relevant buyer on the sale of any goods and/or services through the platform;<br>
+        <br>
+        Seller refers to the seller who has registered with HFLIX and passed or displayed, listed or provided any goods and/or services for sale on the platform;<br>
+        <br>
+        Personal data should have the meaning specified in the privacy policy;<br>
+        <br>
+        Privacy policy refers to the policies governing the processing of personal data published by HFLIX on the platform;<br>
+        <br>
+        Platform refers to the online platform (website, mobile site or mobile application) developed and/or operated by HFLIX;<br>
+        <br>
+        The registration process refers to the registration process established by HFLIX for you to register and open an account with HFLIX;<br>
+        <br>
+        Representative means employees, employees, officials, agents, contractors, workers, personnel and/or representatives of related parties;<br>
+        <br>
+        You/you refer to all users of the platform, including but not limited to sellers and buyers.<br>
+        <br>
+
+        2.2 In this agreement, unless the context requires otherwise:<br>
+        <br>
+        (a) Indicates that the singular includes the plural, and vice versa;
+        (b) The term indicating a natural person includes a corporate body and an unincorporated body;
+        (c) Reference to any law, legislation or any provision of any law or legislation shall include all relevant provisions, statutory requirements and documents promulgated in accordance with that law, legislation or provision, as well as any changes, amendments or changes to any of the foregoing. Re-enactment;
+        (d) The title of this agreement is inserted for convenience only, and should not affect the interpretation or interpretation of this agreement;
+        (e) References to any party to this agreement or any other agreement or instrument shall include that party's successor and permitted assignee;
+        (f) Any interpretation or rules of interpretation shall not apply to the disadvantage or damage of the party that controls or is responsible for the preparation of this agreement;
+        (g) Any word following the term including, including or any similar phrase shall be interpreted as descriptive and shall not limit the generality of the relevant common words.
+      </p>
+      <h5 class="fw-bold">3. Enter the platform</h5>
+      <hr>
+      <p>3.1 If you wish to access the platform and GamsGo services, you should create an account in HFLIX according to the registration process. After successful registration, you can access the platform and HFLIX services by logging into your account. HFLIX has the right to conduct background checks on you, and has the right to decide on its own to refuse to grant you access to the platform and HFLIX services or any part of it. During the registration process, you may be asked to provide additional verification or information.<br>
+        <br>
+        3.2 You shall be solely responsible for the confidentiality and protection of the username and password of your account, and shall immediately notify HFLIX of any unauthorized access to your account. Any instruction, notice or confirmation HFLIX receives from your account shall be deemed to have been issued by you, although such notice or confirmation may have been issued by a third party, whether authorized or not, and you shall be bound by such instruction, notice or confirm. HFLIX is not responsible for actions taken in accordance with instructions, notices or confirmations sent through your account. HFLIX is not obliged to investigate the authenticity or authority of the person sending/executing the instruction, notice or confirmation, or to verify the integrity of such instruction, notice or confirmation<br>
+        <br>
+        3.3 You should closely monitor all activities and transactions through your account, and you should take all steps and measures to check and verify the transaction history of your account. You should notify HFLIX immediately:<br>
+        <br>
+        (a) Any unusual activity or transaction related to your account, or any activity or transaction that is not accurately recorded in your account;
+        (b) When receiving any incomplete, garbled or inaccurate data or information from HFLIX;
+        (c) After receiving any data or information that is not suitable for you, you may not use or disclose any such data or information without HFLIX's written consent.
+        3.4 Unless HFLIX expressly agrees, each person is limited to one account. Do not create any accounts on behalf of or to impersonate others. If HFLIX discovers that such a fraudulent account has been created, HFLIX reserves the right to immediately suspend the account and reserve the right to take any further remedial measures, including but not limited to notifying relevant authorities, HFLIX does not assume any responsibility.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">4. Use of Platform/HFLIX Service</h5>
+      <hr>
+      <p>4.1 Taking into account that you agree to the terms and conditions of this agreement, HFLIX grants you a non-exclusive and non-transferable right to access and use the platform and HFLIX services only within the scope necessary for this agreement. The platform and/or HFLIX services must not be commercialized in any way.<br>
+        <br>
+        4.2 The platform, HFLIX service and/or all information contained on the platform and/or HFLIX service or provided through the platform and/or HFLIX service shall be collectively referred to as the "HFLIX platform/service", and references to the HFLIX platform/service shall include any part in. Unless otherwise provided in this agreement or with HFLIX’s prior written consent, you may not and may not try, either by yourself or by allowing any third party:<br>
+        <br>
+        (a) Copy, distribute, recreate, and/or propagate the HFLIX platform/service, unless the behavior is incidental to the normal use of the HFLIX platform/service, or for this agreement or other backup and/or operational safety reasons;<br>
+        (b) Rent, lease, sublicense, lend, translate, merge, adapt, change or modify the HFLIX platform/service;<br>
+        (c) Make changes or modifications to all or any part of the HFLIX platform/service, or allow the HFLIX platform/service to be combined with any other program or included in any other program;<br>
+        (d) Disassemble, decompile, reverse engineer or create derivative works based on all or any part of the GamsGo platform/service;<br>
+        (e) Provide all or part of the basic software (including target and source code) of the platform to anyone in any form or otherwise;<br>
+        (f) Use HFLIX platform/service in any illegal way, for any illegal purpose, or in any way that is inconsistent with this agreement or not authorized by this agreement, or fraud or malicious behavior;<br>
+        (g) Collect or obtain any information from the HFLIX platform/service or HFLIX's system, or attempt to decipher any transmission with the server running any HFLIX service;<br>
+        (h) Access any data or information that is not suitable for you, including but not limited to logging in to servers or accounts that you do not have access to;<br>
+        (i) Use any equipment, software or routines to interfere or attempt to interfere with the normal operation of the platform and/or transmit or distribute any malicious code, virus or harmful data to or through the platform or any operating system;<br>
+        (j) Misuse, abuse or invade any aspect of HFLIX platform/service in any way, or otherwise damage the integrity of GamsGo software or system;<br>
+        (l) Use the HFLIX platform/service in the following ways: (i) damage, disable, overburden, damage or endanger HFLIX’s system, software and/or security; (ii) interfere with other users’ access to the HFLIX platform/service Use and enjoy.<br>
+        4.3 After registering with HFLIX, you will automatically join the HFLIX virtual family. You will be entitled to a HFLIX subscription virtual home sharing service.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">5. Personal Information</h5>
+      <hr>
+      <p>5.1 All personal data<br>
+        <br>
+        The information collected by HFLIX will be processed by HFLIX in accordance with the privacy policy published on the platform.<br>
+        <br>
+        5.2 If any data or information provided by HFLIX to you and/or collected or processed by you on behalf of HFLIX contains personal data in accordance with this agreement, you agree to: (i) comply with the required privacy policy, and shall not cause HFLIX to violate its privacy policy (As a “data user”), (ii) comply with HFLIX’s published personal data protection policy, from time to time, (iii) at HFLIX’s reasonable request, give HFLIX access to any personal data, and (iv ) If you find a violation or possible violation of your obligations in the processing of personal data, please immediately notify HFLIX in accordance with this agreement. This clause will continue to be effective after the termination of this agreement.
+        <br><br>
+      </p>
+      <h5 class="fw-bold">6. Confidentiality</h5>
+      <hr>
+      <p>
+        6.1 "Confidential information" refers to all information of any type provided to the recipient by the disclosing party or on behalf of the disclosing party, whether in machine-readable or visually readable form, oral or other forms, and regardless of whether it is marked as "confidential", Whether before or after the beginning of the term of this agreement, it is used for purposes related to this agreement. Confidential information shall include, but is not limited to, technical information, data, know-how, information related to the business of the disclosing party or their respective affiliates, trade secrets, income or income information, marketing strategies, financial status and operations, and any other information By its nature, it is the confidential and proprietary information of the disclosing party or its suppliers/affiliated companies.<br>
+        <br>
+        6.2 "Confidential information" shall not include the following information: (i) At the time of disclosure, the recipient already possesses and does not have any confidentiality obligations, and the party can determine valid evidence in a reasonably sufficient and credible manner, such as prior possession; ( ii) Independently developed by the receiving party, (iii) Except for the fact that the receiving party or its representative violates this agreement, which makes it generally available to the public or becomes generally available; Obtained confidentially; however, the premise is that the recipient does not know that the source is bound by a confidentiality agreement or other legal or fiduciary duty to keep the disclosing party confidential.<br>
+        <br>
+        6.3 Unless otherwise provided in this Agreement, the recipient of any confidential information agrees not to disclose such confidential information to anyone unless (i) the law or any stock exchange or court with jurisdiction requires disclosure; (ii) if This agreement allows such disclosure; (iii) there is a clear need to know such confidential information from their respective representatives and/or legal, financial and/or accounting consultants; and/or (iv) with the prior written approval of the disclosing party.<br>
+        <br>
+        6.4 If any of HFLIX’s confidential information is required to be disclosed in any manner due to any applicable law or any securities trading or securities trading system or the provisions of a competent court, you shall promptly notify in writing at any time sufficient for HFLIX to seek protection orders or other appropriate remedies. Disclosure to HFLIX before the measures are disclosed. You should: (i) Only disclose the minimum information required by law, and at HFLIX’s request, take commercially reasonable efforts to obtain confidential treatment of GamsGo’s confidential information to be disclosed, and allow GamsGo (if you wish) to return Take measures it deems necessary or desirable to challenge any such disclosures or otherwise edit or minimize such disclosures; (ii) Fully cooperate with HFLIX.<br>
+        <br>
+        6.5 All confidential information shall be used only for the purpose of this agreement.<br>
+        <br>
+        6.6 This clause remains effective after this agreement is terminated or expired for any reason.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">7. Consumer protection</h5>
+      <hr>
+      <p>
+        7.1 Notwithstanding any provisions in this article, if the Consumer Protection Act of 1999 (the "Act") applies and you as a consumer conduct transactions under the Act (a consumer shall have the meaning specified in the Act, "consumer"), (a ) This agreement is only intended to exclude or limit the remedies and rights you may have within the maximum scope permitted by the Act; (b) Nothing in this agreement intends to exclude or limit HFLIX's negligence against you due to (i) HFLIX The liability for any loss or damage caused; (ii) HFLIX violated any express or implied terms of this agreement without sufficient reason.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">8. Warranty, non-availability and disclaimer</h5>
+      <hr>
+      <p>
+        8.1 HFLIX guarantees that HFLIX services will be provided with reasonable care and skill.<br>
+        <br>
+        8.2 The information provided to you through the platform or HFLIX services may be provided to HFLIX by a third party. Although GamsGo will use reasonable efforts to ensure that such information is communicated to you in the original form provided by a third party, GamsGo does not guarantee that the information is accurate, complete, reliable, original, current or error-free.<br>
+        <br>
+        8.3 Regarding the use of the platform and/or HFLIX services, HFLIX does not guarantee:<br>
+        <br>
+        (a) The functions contained in the platform and/or HFLIX service will meet your requirements;<br>
+        (b) The operation of the platform and/or HFLIX service will not be interrupted or error-free;<br>
+        (c) Any defects in the platform and/or HFLIX services will be corrected;<br>
+        (d) The platform is free of viruses, loopholes, online interruptions or other harmful threats. Before accessing the platform, you are responsible for implementing all necessary security and virus protection measures on or in your computer or mobile device.<br>
+        8.4 You understand, acknowledge and agree:<br>
+        <br>
+        (a) Opinions or suggestions are questions of opinions and may not represent the true application, quality or characteristics of a particular service. Therefore, you accept any suggestions or suggestions provided by HFLIX, its employees or agents to be fully followed or take action at your own risk , Therefore HFLIX is not responsible for any such suggestions or recommendations; <br>
+        (b) All transactions conducted on the platform are conducted through telecommunications and data networks. Therefore, you may delay or prevent you from receiving notices from HFLIX due to factors affecting related service providers and other related parties, and vice versa. You accept that HFLIX cannot guarantee the timely delivery of such notices or confirmations;<br>
+        (c) In some cases, the platform or HFLIX services may be unavailable due to maintenance, update or upgrade work or other reasons beyond HFLIX's control. HFLIX does not guarantee that the platform and/or HFLIX services will always be available, and HFLIX does not assume any responsibility or liability for such unavailability in any way.<br>
+      </p>
+      <h5 class="fw-bold">9. Limitation of Liability</h5>
+      <hr>
+      <p>9.1 To the maximum extent permitted by laws and regulations,
+        <br>
+        (a) The platform, HFLIX services, and all information provided to you by HFLIX through the platform and/or GamsGo services are provided on an "as is" and "available" basis, without any form of guarantee, and HFLIX hereby denies any exceptions to this agreement Otherwise, all guarantees and conditions regarding the platform and HFLIX services and information provided to you by HFLIX; <br>
+        (b) HFLIX shall not be liable for any costs, losses, damages, claims, fines, penalties, liabilities and/or expenses incurred by you due to any information provided by GamsGo to you through the platform;<br>
+        (c) Under no circumstances will HFLIX pay any indirect, incidental, punitive and/or consequential damage and/or loss, profit, goodwill, loss of production and/or income and/or any other type of special loss and / Or whether such losses and/or damages are reasonably foreseeable, or whether HFLIX has been notified of the possibility of the same occurrence, regardless of the damages;<br>
+        (d) HFLIX in respect of any and all costs, losses, damages,
+        The claims, fines, penalties, liabilities and/or expenses incurred under this agreement shall not exceed SGD30 or the relevant fees paid by you for the disputed HFLIX service, whichever is higher.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">10. Compensation</h5>
+      <hr>
+      <p>10.1 You agree to defend, compensate and protect HFLIX, its affiliates and their respective directors, officers, employees and agents from all expenses, losses, damages, claims, fines, penalties, liabilities and/or expenses (including Attorney’s injury’ expenses, no matter how they are incurred in accordance with this agreement, include but are not limited to expenses incurred or related to your negligence, omission and/or violation of this agreement. This compensation shall be granted regardless of whether legal proceedings are instituted, and if such proceedings are instituted, regardless of the method, manner, or nature of any settlement, compromise, or decision. For the avoidance of doubt, nothing in this clause shall hinder or restrict HFLIX from performing any other rights and obligations under this agreement.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">11. Force Majeure</h5>
+      <hr>
+      <p>11.1 HFLIX shall not be liable to you or liable to you due to any delay in performance or failure to perform HFLIX’s obligations under this agreement or be deemed to have violated this agreement, if the delay or failure is due to any reason beyond HFLIX’s reasonable control Reasons for the scope, including but not limited to:<br>
+        <br>
+        (a) Fire, natural disaster, storm, explosion, earthquake, flood, storm, accident or other natural disaster;<br>
+        (b) War or war threat, destruction, rebellion, civil strife or expropriation;<br>
+        (c) Any actions, restrictions, regulations, rules, prohibitions, or measures of any kind by any government, parliament or local authority;<br>
+        (d) strikes, lockouts or other industrial actions or trade disputes;<br>
+        (e) Difficulty in obtaining raw materials, labor, fuel, parts or machinery;<br>
+        (f) Interference or failure of telecommunications, transportation, power supply, or system, or machine failure that affects the platform, HFLIX service, or any part of it.<br>
+      </p>
+      <h5 class="fw-bold">12. HFLIX rights and suspension</h5>
+      <hr>
+      <p>12.1 Without prejudice to any other rights that HFLIX may have under this agreement or the law, HFLIX has the right to immediately (without prior notice):<br>
+        <br>
+        (a) Suspend or stop your access to the platform and/or HFLIX services;<br>
+        (b) Delete any information you submit, upload or transmit to or through the platform;<br>
+        (c) Suspend or restrict any or all activities and/or transactions related to your account;<br>
+        (d) withhold, keep or confiscate any money due to you;
+        In any of the following events:<br>
+        <br>
+        (a) HFLIX believes that your performance of any sales contract does not conform to HFLIX's unilateral judgment;<br>
+        (b) HFLIX reasonably believes that your use of the platform and/or HFLIX services will interfere with or interfere with other users' use or enjoyment of the platform or HFLIX services;<br>
+        (c) You are found to have violated any of the terms and conditions contained in this agreement, or HFLIX has reasonable grounds to suspect that you may have committed any such violation.<br>
+      </p>
+      <h5 class="fw-bold">13. Termination</h5>
+      <hr>
+      <p>13.1 Without prejudice to any other rights GamsGo may have under this agreement or the law, HFLIX may immediately terminate this agreement by written notice if:<br>
+        <br>
+        (a) You have violated any of the terms and conditions of this agreement, and you have not corrected such violations within thirty (30) days after HFLIX’s written notice;<br>
+        13.2 Without affecting any other rights and remedies that HFLIX may have under this agreement or the law, upon termination:<br>
+        <br>
+        (a) All rights granted to you under this agreement will terminate;<br>
+        (b) You should immediately stop all activities authorized by this agreement;<br>
+        (c) You should immediately destroy or return all HFLIX confidential information in your possession at HFLIX's request, and prove to HFLIX that you have done so.<br>
+      </p>
+      <h5 class="fw-bold">14. Changes</h5>
+      <hr>
+      <p>14.1 HFLIX reserves the right to add, delete, amend or modify this agreement or any part of it at any time, or impose new conditions, including but not limited to increased access and use fees. Such addition, deletion, modification or modification shall take effect immediately after receiving the notification. The notification method may include, but is not limited to, posting on the platform, or by email or regular mail, or by any other means. Your use of the platform and/or HFLIX services after the issuance of such notice shall be deemed to have accepted this agreement and made such additions, deletions, amendments or modifications.<br>
+        <br>
+        14.2 You should notify HFLIX immediately<br>
+        <br>
+        If you do not agree to any such addition, deletion, amendment or modification, unless HFLIX agrees otherwise, this agreement shall be deemed terminated after you notify HFLIX of the disagreement.<be>
+          <br>
+          14.3 HFLIX reserves the right to change or discontinue any aspect or function of the platform and/or HFLIX services at any time, including but not limited to content, available time, and equipment required for access and use.
+          <br><br>
+          14.4 Unless both parties agree in writing, any modification or change by you to this agreement is invalid and binding.
+          <br><br>
+      </p>
+      <h5 class="fw-bold">15. Notification</h5>
+      <hr>
+      <p>15.1 The address, e-mail address or fax notified by the other party or provided to the other party through the platform. Such notice shall be deemed to have been delivered (a) if delivered in person, on the next business day after delivery; (b) if delivered by registered mail or courier, five (5) days after delivery; (c) If sending by fax, after receiving the confirmation report, explain if the fax is successfully sent before 5 pm. On business days, if sent after 5 pm on a business day or a non-business day, the next business day; or (d) if sent by email, after successfully sending the email, if sent before 5 pm, It is recorded as an email sent. On working days, if sent after 5pm on a business day or a non-business day, the next business day.<br>
+        <br>
+        15.2 Except as otherwise agreed or stipulated in this agreement, all notices and other communications sent to any party under this agreement shall be in written form and shall be valid and sufficient when sent or sent in the following ways:<br>
+        <br>
+        If given to you through HFLIX<br>
+        <br>
+        (a) By publishing, publishing or sending notifications on or through relevant platforms;
+        (b) By e-mail to the e-mail address provided or notified by you;
+        (c) Published in newspapers;
+        (d) Send to your mobile phone number registered in HFLIX via short message service (SMS).
+        (e) Email to support@hflix.com.ng
+        15.3 The notice shall be deemed to have been delivered (a) If delivered in person, on the next business day after delivery; (b) If delivered by registered mail or courier, three (3) jobs after delivery (C) If sent by e-mail, after the e-mail is successfully sent, if it is sent before 5 pm, it will be recorded as an e-mail sent. On a working day, if it is sent after 5 pm or on a non-business day, the next business day; (d) If it is sent on the relevant platform or through the relevant platform or via SMS by posting, publishing or sending a notice, then Send immediately after successful posting, posting or sending, if posting, posting or sending before 5 pm. On weekdays, if you post, post or send after 5pm. Or on a non-working day, the next working day.<br>
+        <br>
+        15.4 Notwithstanding anything to the contrary in these terms, notices sent by email do not apply to any laws, notices, claims, demands, litigation, litigation and/or litigation.
+        <br><br>
+      </p>
+      <h5 class="fw-bold">16. Entire Agreement</h5>
+      <hr>
+      <p>16.1 This agreement (together with any documents mentioned in this agreement) constitutes a complete agreement between the parties on the subject matter of this agreement and supersedes any oral or written agreement, understanding or arrangement reached between the parties on the subject matter of this agreement, and Except as otherwise provided in this agreement, any statement, promise or undertaking stated or written in the negotiation between the parties before this agreement shall be deemed to have been given or implied.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">17. Assignment, replacement, commission and subcontracting</h5>
+      <hr>
+      <p>
+        17.1 Without GamsGo's prior written consent, you may not assign, assign, replace and/or subcontract any of your rights and/or obligations in this agreement to a third party. GamsGo may assign, assign, replace and/or subcontract any or all of its rights and obligations under this agreement to any of its affiliates.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">18. No exemption</h5>
+      <hr>
+      <p>18.1 Neither party has failed or delayed the exercise of any rights or remedies under this agreement at any time or within any period of time, nor has any party known or acquiesced or violated any provisions of this agreement that shall act or be deemed to have waived , The party’s waiver of any breach of contract does not constitute a continuous waiver of any subsequent or continuous breach of contract. Unless signed by the waiver in writing, the rights or remedies under this agreement shall not be waived.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">19. Successors and assigns</h5>
+      <hr>
+      <p>19.1 This agreement is binding on both parties and their permitted legal assignees and successors of rights.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">20. Severability</h5><br>
+      <p>20.1 Any illegal, invalid or unenforceable terms, conditions, provisions, provisions, contracts or promises contained in this agreement (the "Provisions" and any references to provisions shall include any part thereof) shall be fully acceptable within the following scope: The illegality, invalidity, or unenforceability of points and invalidity, without invalidating the remaining part<br>
+        <br>
+        The clauses contained in this agreement are not affected by illegal, invalid or unenforceable clauses, nor by their division from this agreement. This agreement should be interpreted and enforced as if such illegal, invalid or unenforceable clauses have never formed part of this agreement. If any provision of this agreement or the application of any provision is illegal or unenforceable or deemed illegal or unenforceable, the provision shall continue to apply and make necessary modifications to make the provision legal, effective and enforceable.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">21. No partnership/agent</h5>
+      <hr>
+      <p>21.1 Nothing in this agreement shall be established or deemed to establish a joint venture or partnership between the two parties. Neither party has the right to act, make statements or bind or enter into contracts on behalf of the other party.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">22. Applicable Law </h5>
+      <hr>
+      <p>22.1 The composition, validity and performance of this agreement are governed by UK laws in all aspects. The parties to this agreement submit to the exclusive jurisdiction of the UK courts.<br>
+        <br>
+      </p>
+      <h5 class="fw-bold">23. Survival</h5>
+      <hr>
+      <p>23.1 The contract, conditions and terms of this agreement can take effect and continue to be valid according to their nature after the termination or expiration of this agreement, and remain fully effective after the termination or expiration of this agreement.<br>
+        <br>
+        Appendix A<br>
+        (Pay)<br>
+        Buyer pays<br>
+        The relevant buyer shall pay the amount of any sales contract ("sale contract amount") through the payment gateway available on the platform in accordance with any terms and conditions that may be imposed by the relevant payment gateway service provider.<br>
+        <br>
+        General<br>
+        <br>
+        1. You have no right to offset any payment due to HFLIX against any claim made by you or payment due to you. <br>
+        2. If HFLIX has reason to suspect that you are engaged in any fraud or other similar activities, HFLIX has the right to cancel any payment request you have made.
+        Limitation of Liability/Disclaimer.<br>
+        <br>
+        This website and affiliate network marketing plan are provided on an "as is" and "available" basis for your reference and use without any statement or approval. To the maximum extent permitted by applicable laws, we do not make any express or implied guarantees for this website or affiliate programs, including but not limited to implied guarantees for satisfactory quality, functionality, and suitability for specific purposes. Purpose, non-infringement, compatibility, safety, accuracy, conditions or completeness, or any implied warranties arising from the transaction, use or trade process.<br>
+        <br>
+
+        If and within the maximum scope permitted by applicable laws, we will not bear the following responsibilities:<br>
+        <br>
+        1. Any economic loss (including but not limited to loss of income, profit, contract, business or expected savings); <br>
+        2. Any loss of goodwill or reputation;<br>
+        3. Any special or indirect or consequential loss, in any case.<br>
+        Compensate and remain harmless<br>
+        <br>
+        You agree to protect HFLIX (and each of our officers, directors, members, employees, agents and affiliates) from any claims, demands, litigation, damages, losses, costs or expenses, including but not Limited to reasonable legal fees, due to or related to: your use or behavior of our affiliate programs; or your violation of these terms and conditions. In addition, you agree to take full responsibility (and fully compensate us) for all claims, liabilities, damages, losses, costs and expenses (including legal fees) suffered by or related to any violation of the terms and conditions. And affiliate programs, or any other person's use of your user account, device, or Internet access account to access the service or any other liability arising from us; or you violate any law or the rights of any third party.<br>
+        <br>
+        General<br>
+        <br>
+        The site is owned and operated by HFLIX<br>
+        <br>
+        These terms and conditions and your use of the website and affiliate programs shall be governed by and interpreted in accordance with the laws of NIGERIA. Any disputes related to these terms and conditions or your use of this website or affiliate programs will only be resolved in NIGERIA courts. Nothing in these terms and conditions shall be deemed to affect your statutory rights under NIGERIA laws. If any part of these terms and conditions is deemed wholly or partly invalid or unenforceable by any court in NIGERIA, the validity or enforceability of other parts of these terms and conditions will not be affected. Any headings contained in these terms and conditions are for reference only, and the provisions of these terms and conditions are not enforceable.<br>
+        <br>
+      </p>
+
+      <div class="d-grid gap-2">
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href="/LegalFolder/AMLpolicy.html "> AML POLICY </a>
+        </button>
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href=" /LegalFolder/Copyright.html"> COPYRIGHT</a>
+        </button>
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href=" /LegalFolder/HflixT&C.html"> HFLIX T & C</a>
+        </button>
+        <button type="button" class="btn btn-secondary fw-bold">
+          <a href="/LegalFolder/privacypolicy.html"> Privacy Policy</a>
+        </button>
+        <button type=" button" class=" btn btn-secondary fw-bold">
+          <a href=" /LegalFolder/RefundPolicy.html"> Refund Policy</a>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container-fluid footer bg-dark  pt-4">
+      <div class="container text-white ps-4 pe-5">
+        <p class="text-start"> <a href="/index.html"> Home </a> </p>
+        <p class=" text-start"> <a href=" /LegalFolder/privacypolicy.html"> Policy</a></p>
+        <p class=" text-start"> <a href="/About Html File/Aboutus.html "> About Us </a></p>
+        <div class="wrapper">
+          <a href="#" class="icon instagram text-center">
+            <span><i class="fab fa-instagram fw-bold"></i></span>
+          </a>
+          <a href="#" class="icon whatsapp text-center">
+            <span><i class="fab fa-whatsapp fw-bold"></i></span>
+          </a>
+        </div>
+        <p class="text-start small pb-0 pt-2"> HFLIX © 2023 by STONECODE</p>
+        <p class="text-start small pt-0"> All services are copyrights of their respective owners.</p>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script type="module" src="/auth.js"></script>
+  <script type="module" src="/loader.js"></script>
+
+</body>
+
+</html>

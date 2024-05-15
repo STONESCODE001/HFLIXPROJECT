@@ -1,0 +1,155 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Inter', sans-serif;
+}
+
+p,
+a {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+  background-color: rgba(229, 228, 226, 0.2) !important;
+}
+
+/* Nav*/
+.nav-text {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.loginnav {
+  border-radius: 4px !important;
+  background-color: #F5F5F5 !important;
+}
+
+/* Dropdown of the nav bar profile picture*/
+.dropdownnav {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-contentnav {
+  background-color: #412323;
+  right: 0;
+  border-radius: 5px !important;
+  display: none;
+  min-width: 220px !important;
+  position: absolute;
+  box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  /*padding: 12px 16px;*/
+  z-index: 1;
+}
+
+.dropdownnav:hover .dropdown-contentnav {
+  display: block;
+  transition: 1ms ease-in-out;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+}
+
+.nav-link:hover {
+  background-color: #E50419 !important;
+}
+
+
+/* Loader Style Code*/
+.loaderDiv {
+  z-index: 2 !important;
+}
+
+.overlayForLoader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(15px);
+  z-index: 1 !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.alertDisplay{
+  border-radius: 15px!important;
+}
+
+
+/* calculator*/
+.calculator-body {
+  border-radius: 15px !important;
+  border: 2px solid #FFCFCF6E;
+  background-color: white;
+}
+
+.estimated-amount {
+  font-size: 35px !important;
+}
+
+output {
+  border-radius: 5px;
+  border-width: 3px;
+  border: 2px solid lightgray;
+}
+
+
+.lastCard {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.startBtn{
+  border-radius: 30px !important;
+  border: 5px solid #FFCFCF !important;
+  color: #474747 !important;
+}
+
+.startBtn > a {
+  color: #474747 !important;
+  text-decoration: none;
+}
+
+.startBtn:hover {
+  background-color: red;
+  
+}
+.startBtnLink:hover {
+  color: white!important;
+}
+
+/* footer*/
+.text-start>a {
+  font-weight: bold !important;
+  color: #E50419 !important;
+  text-shadow: 0 0 90px white;
+}
+
+.wrapper .icon {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer {
+  border: 1px solid rgba(229, 228, 226, 0.1);
+}

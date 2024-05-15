@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Affilate Page</title>
+
+  <link rel="stylesheet" href="/Affilate/affilate.css">
+
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-utilities.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar pe-3 ps-3 ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="../images/hflixlogo_rd.png" alt="hflix_logo.png" style="width: 100px;" </a>
+
+        <div>
+          <a class="nav-text" href="/index.html">
+            <p class="d-none d-sm-inline pe-3">
+              Home
+            </p>
+          </a>
+          <a class="nav-text" href="/dashboard/login-dashboard.html">
+            <p class=" d-none d-sm-inline pe-3">
+              Subscription
+            </p>
+          </a>
+          <a class="nav-text d-none">
+            <p class="d-none d-sm-inline pe-3">
+              Affiliate
+            </p>
+          </a>
+          <a class="nav-text" href="/LegalFolder/privacypolicy.html">
+            <p class="d-none d-sm-inline pe-3">
+              Policies
+            </p>
+          </a>
+        </div>
+
+
+
+
+
+        <div class="dropdownnav">
+          <!-- formal width below was 39px -->
+          <img id="userProfile" src="/images/person-circle.svg" style="width:42px;">
+
+
+          <div class="dropdown-contentnav ">
+            <div class="dropdown-contentnav mx-auto d-flex flex-column flex-shrink-0 p-3 fw-bold">
+
+
+              <!-- removed style="display: none;" below-->
+              <p id="userNameNav" class="mb-0 mb-md-0 me-md-auto text-white"> Welcome! <br> signedinuser@gmail.com
+              </p>
+
+              <!-- removed style="display: block;" below-->
+              <a href="/acctcreation/login.html" id="signInBtn" class="text-center mb-0 mb-md-0  p-2 loginnav text-decoration-none text-dark">
+                Sign in
+              </a>
+
+              <hr class="text-white card-divider ">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item d-md-none">
+                  <a href="/index.html" class="nav-link text-white" aria-current="page">
+                    <img src="/images/home (2).png" class="bi me-2" width="18" height="18" oncontextmenu="return false;">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item " id="navSubBtn">
+                  <a href="/dashboard/login-dashboard.html" class=" nav-link text-white" aria-current="page">
+                    <img src="/images/shopping-cart (1)wh.png" class="bi me-2" width="18" height="18">
+                    <use xlink:href="#home" />
+                    Subscription
+                  </a>
+                </li>
+                <li class="d-none">
+                  <a href="#" class="nav-link text-white">
+                    <img src="/images/handshake (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2" /></img>
+                    Affilate
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <img src="/images/user-headset (1)wh.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#grid" /></img>
+                    Support
+                  </a>
+                </li>
+                <li>
+                  <a href="/LegalFolder/privacypolicy.html" class="nav-link text-white">
+                    <img src="/images/policies-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#people-circle" /></img>
+                    Policies
+                  </a>
+                </li>
+                <li>
+                  <a href="/About Html File/Aboutus.html" class=" nav-link text-white">
+                    <img src="/images/aboutus-wh-nav.png" class="bi me-2" width="16" height="16">
+                    <use xlink:href="#table" /></img>
+                    About Us
+                  </a>
+                </li>
+              </ul>
+
+              <hr class=" text-white">
+
+              <!-- removed style="display: none;" below-->
+              <p id="signOutBtn" class="align-items-center mb-0 mb-md-0 me-md-auto text-white ">
+
+                <img src="/images/sign-out-wh-nav (1).png" class="bi me-2" width="16" height="16">
+                <use xlink:href="#people-circle" /></img>
+
+
+                Sign Out
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </nav>
+  
+  <div class="overlayForLoader">
+    <div class="container-fluid">
+      <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="text-center loaderDiv">
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5">
+    <div class="container p-3 mt-3">
+
+      <h1 class="fw-bold text-center">
+        Make Money! <br> Be an <bold class="text-danger"> HFLIX </bold> Affilate
+      </h1>
+      <p class="text-center fw-semibold">
+        Come join the best affiliate program where you get paid as long as your referral stays with us.
+      </p>
+      <div class="my-auto text-center">
+        <img src="/images/banner.webp" class=" " width="310px">
+      </div>
+      
+      <div class="alertDisplay alert-danger p-4 mt-5">
+        <bold class="fw-bold"> Disclaimer *</bold> this calculator is mostly an estimate and it isn't made for social networks like yt. if you want a thorough estimate reach out to us.
+      </div>
+
+      <div class="calculator-body mt-5">
+        <div class="p-4 mt-2 ">
+          <h5 class="fw-bold">
+            How much can i make referring for <bold class="text-danger"> HFLIX </bold>?
+          </h5>
+          <form class="row g-3 pt-2" oninput="result.value = slider.value">
+            <div class="col-12">
+              <label for="followerCount" class="form-label"> Your Present Follower Count </label>
+              <input type="number" class="form-control fw-bold" id="followerCount">
+            </div>
+            <div class="col-12">
+              <label for="likeCount" class="form-label"> Average Like Count Per Video</label>
+              <input type="number" class="form-control fw-bold" id="likeCount">
+            </div>
+            <div class="col-12">
+              <label for="commentCount" class="form-label "> Average Comment Per Video</label>
+              <input type="number" class="form-control fw-bold" id="commentCount">
+            </div>
+            <div class="col-12 d-none">
+              <label for="shareCount" class="form-label "> Average Share Count Per Video</label>
+              <input type="number" class="form-control fw-bold" id="shareCount">
+            </div>
+            <div class="col-12 d-grid">
+              <button class="btn btn-danger fw-bold" id="calculateBtn">
+                Calculate
+              </button>
+            </div>
+            <div class="col-md-12 mt-4">
+              <p class="text-secondary fw-bold engagementratecalc small "></p>
+              <p class="text-secondary fw-bold engagementcalc small"></p>
+              <h6 class="fw-bold mb-0 pb-0 medium estimatedPayoutText">
+
+              </h6>
+              <h1 class="fw-bold mt-0 estimatedPayout">
+
+              </h1>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-5 text-center">
+        <h5 class="fw-bold">
+          How it <bold class="fw-bold text-danger"> Works </bold> ?
+        </h5>
+
+        <h5 class="fw-bold mt-5 ">
+          <bold class="text-primary">1.</bold>Join
+        </h5>
+        <p class="p-3 pt-0 text-secondary">
+          <bold class="fw-bold">Registering as an Hflix Affiliate is free and quick. </bold> You just reach out to our team on Whatsapp and state your interest after which we reply with your referral link. you can then start making money immediately!
+        </p>
+
+
+        <h5 class="fw-bold mt-5 ">
+          <bold class="text-primary">2.</bold> Share
+        </h5>
+        <p class="p-3 pt-0 text-secondary">
+          Share Hflix with your fans or friends, promote your exclusive link on <bold class="fw-bold"> your website, blog, Facebook, Twitter, YouTube Channel, Instagram, Tiktok, etc. </bold>
+        </p>
+
+
+        <h5 class="fw-bold mt-5 ">
+          <bold class="text-primary">3.</bold>Earn
+        </h5>
+        <p class="p-3 pt-0 text-secondary">
+          Every time a new user registers on GamsGo through your referral link and successfully makes a purchase, you will earn a commission.
+        </p>
+
+      </div>
+
+
+      <div class="mt-5 mb-5 text-center p-2 d-grid ">
+        <h2 class="fw-bold">
+          Start your <bold class="text-danger"> Hflix Affilate Journey </bold>
+        </h2>
+        <p class="mt-1 p-2 ">
+          Share your Affiliate Link or promo code, and earn for every referral.
+        </p>
+        <button type="btn"  class="btn fw-bold startBtn p-3 fs-5">
+          <a href="https://wa.me/message/NRJID6MNDVPFM1" class="startBtnLink">
+             Start Earning Now
+          </a>
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container-fluid footer bg-dark  pt-4">
+      <div class="container text-white ps-4 pe-5">
+        <p class="text-start"> <a href="/index.html"> Home </a> </p>
+        <p class=" text-start"> <a href=" /LegalFolder/privacypolicy.html"> Policy</a></p>
+        <p class=" text-start"> <a href="/About Html File/Aboutus.html "> About Us </a></p>
+        <div class="wrapper">
+          <a href="#" class="icon instagram text-center">
+            <span><i class="fab fa-instagram fw-bold"></i></span>
+          </a>
+          <a href="https://wa.me/message/NRJID6MNDVPFM1" class="icon whatsapp text-center">
+            <span><i class="fab fa-whatsapp fw-bold"></i></span>
+          </a>
+        </div>
+        <p class="text-start small pb-0 pt-2"> HFLIX © 2023 by STONECODE</p>
+        <p class="text-start small pt-0"> All services are copyrights of their respective owners.</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="/Affilate/affilate.js"></script>
+  <script type="module" src="/auth.js"></script>
+  <script type="module" src="/email-password-auth.js"></script>
+
+
+  <script src="/bootstrap/js/bootstrap.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+   <script type="module" src="/loader.js"></script>
+</body>
+
+</html>
